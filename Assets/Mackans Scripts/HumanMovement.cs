@@ -6,9 +6,9 @@ using UnityEngine.InputSystem;
 
 public class HumanMovement : MonoBehaviour
 {
-    [SerializeField] private InputActionReference movement, jump, interact;
-
-    private bool isGrounded = true, hasJumped = false;
+    [SerializeField] private InputActionReference movement, jump, interact, crouch;
+    [SerializeField] private float moveSpeed = 2;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -22,22 +22,53 @@ public class HumanMovement : MonoBehaviour
         if (movement.action.IsPressed())
             MoveAction();
 
-        if (jump.action.WasPressedThisFrame())
-        {
-            hasJumped = false;
-            isGrounded = false;
+        if (jump.action.IsPressed())
             JumpAction();
-        }
+
+        CrouchAction();
     }
 
     private void MoveAction()
     {
         float moveDir = movement.action.ReadValue<Vector2>().x;
-        transform.position += new Vector3(moveDir, 0, 0) * Time.deltaTime;
+        transform.position += new Vector3(
+            moveDir * Time.deltaTime * moveSpeed,
+            0,
+            0);
     }
 
     private void JumpAction()
     {
-        
+        if (GetComponent<HumanCore>().isGrounded)
+        {
+            Debug.Log("Can jump");
+            GetComponent<Rigidbody2D>().velocity = new Vector2(
+                0, 6);
+        }
+    }
+
+    private void CrouchAction()
+    {
+        if (crouch.action.WasPressedThisFrame())
+        {
+            Debug.Log("CROUCH");
+            transform.localScale = new Vector3(1, 0.5f, 1);
+
+            transform.localPosition -= new Vector3(
+                0, 0.5f, 0);
+
+            moveSpeed /= 2f;
+        }
+
+        if (crouch.action.WasReleasedThisFrame())
+        {
+            Debug.Log("STAND UP");
+            transform.localScale = new Vector3(1, 1f, 1);
+            
+            transform.localPosition += new Vector3(
+                0, 0.5f, 0);
+
+            moveSpeed *= 2f;
+        }
     }
 }

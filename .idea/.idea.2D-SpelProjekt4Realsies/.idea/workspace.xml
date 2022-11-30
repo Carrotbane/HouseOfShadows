@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2106d27e-48c5-405a-b976-4d108fd36267" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.2D-SpelProjekt4Realsies/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.2D-SpelProjekt4Realsies/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.2D-SpelProjekt4Realsies/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Mackans Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Mackans Scripts/HumanMovement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Mackans Scripts/HumanMovement.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/HELLO HELLO phone guy.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/HELLO HELLO phone guy.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene 1.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene 1.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Mackans Scripts/GroundTrigger.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Mackans Scripts/GroundTrigger.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Mackans Scripts/HumanCore.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Mackans Scripts/HumanCore.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2D-SpelProjekt4Realsies/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2D-SpelProjekt4Realsies/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mackans Scripts/HumanMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mackans Scripts/HumanMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mackans Scripts/InputStuff/InputActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mackans Scripts/InputStuff/InputActions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mackans Scripts/InputStuff/InputActions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mackans Scripts/InputStuff/InputActions.inputactions" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +87,7 @@
       <workItem from="1669748564353" duration="1751000" />
       <workItem from="1669755898944" duration="1527000" />
       <workItem from="1669804086865" duration="6305000" />
-      <workItem from="1669812325954" duration="3893000" />
+      <workItem from="1669812325954" duration="12008000" />
     </task>
     <servers />
   </component>

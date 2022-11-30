@@ -53,6 +53,15 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Crouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""79a9cc6f-4419-4837-ad5c-e05b1ac16635"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -136,7 +145,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""05f6913d-c316-48b2-a6bb-e225f14c7960"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
@@ -152,6 +161,28 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c8c1b48a-9e90-49aa-9ea6-21358728dd48"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""056265a1-66d6-470c-9cb0-05f26a534d2c"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -742,6 +773,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         m_Human_Move = m_Human.FindAction("Move", throwIfNotFound: true);
         m_Human_Jump = m_Human.FindAction("Jump", throwIfNotFound: true);
         m_Human_Interact = m_Human.FindAction("Interact", throwIfNotFound: true);
+        m_Human_Crouch = m_Human.FindAction("Crouch", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -816,6 +848,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Human_Move;
     private readonly InputAction m_Human_Jump;
     private readonly InputAction m_Human_Interact;
+    private readonly InputAction m_Human_Crouch;
     public struct HumanActions
     {
         private @InputActions m_Wrapper;
@@ -823,6 +856,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Human_Move;
         public InputAction @Jump => m_Wrapper.m_Human_Jump;
         public InputAction @Interact => m_Wrapper.m_Human_Interact;
+        public InputAction @Crouch => m_Wrapper.m_Human_Crouch;
         public InputActionMap Get() { return m_Wrapper.m_Human; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -841,6 +875,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Interact.started -= m_Wrapper.m_HumanActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_HumanActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_HumanActionsCallbackInterface.OnInteract;
+                @Crouch.started -= m_Wrapper.m_HumanActionsCallbackInterface.OnCrouch;
+                @Crouch.performed -= m_Wrapper.m_HumanActionsCallbackInterface.OnCrouch;
+                @Crouch.canceled -= m_Wrapper.m_HumanActionsCallbackInterface.OnCrouch;
             }
             m_Wrapper.m_HumanActionsCallbackInterface = instance;
             if (instance != null)
@@ -854,6 +891,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @Crouch.started += instance.OnCrouch;
+                @Crouch.performed += instance.OnCrouch;
+                @Crouch.canceled += instance.OnCrouch;
             }
         }
     }
@@ -1013,6 +1053,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnCrouch(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
