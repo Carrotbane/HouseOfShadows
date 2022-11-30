@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2106d27e-48c5-405a-b976-4d108fd36267" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Mackans Scripts/GroundTrigger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Mackans Scripts/GroundTrigger.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Mackans Scripts/HumanCore.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Mackans Scripts/HumanCore.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2D-SpelProjekt4Realsies/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2D-SpelProjekt4Realsies/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mackans Scripts/HumanMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mackans Scripts/HumanMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mackans Scripts/InputStuff/InputActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mackans Scripts/InputStuff/InputActions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mackans Scripts/InputStuff/InputActions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mackans Scripts/InputStuff/InputActions.inputactions" afterDir="false" />
-    </list>
+    <list default="true" id="2106d27e-48c5-405a-b976-4d108fd36267" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,7 +78,7 @@
       <workItem from="1669748564353" duration="1751000" />
       <workItem from="1669755898944" duration="1527000" />
       <workItem from="1669804086865" duration="6305000" />
-      <workItem from="1669812325954" duration="12008000" />
+      <workItem from="1669812325954" duration="12153000" />
     </task>
     <servers />
   </component>
