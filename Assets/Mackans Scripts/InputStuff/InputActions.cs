@@ -703,6 +703,171 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Shadow"",
+            ""id"": ""cfce88d3-b5ff-420b-82a1-b5379a5a6d59"",
+            ""actions"": [
+                {
+                    ""name"": ""Crouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""b74d44be-0098-4873-8779-9c80dfaa5a77"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""78afa052-61f1-4a21-b320-edf0f51c5822"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""d01592ca-9ab9-40d1-b8e3-3d1899ed17da"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""de27ee2c-6acd-4a76-aeac-79524bbf9b1d"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""3e058f17-2903-46ec-8ad0-801cecd17d6e"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Sideways"",
+                    ""id"": ""0151115f-94cb-4ae9-bbdc-9c4f3933aa44"",
+                    ""path"": ""Dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""dcb7e09f-e3b2-4942-89d7-4d5d16390cd6"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""6e40fe6a-04ca-4df2-b1c0-c881bd4b035a"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""054e46d5-4b8c-4ea1-b6cb-cbc0dd869108"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""07f7d7d1-ad9f-4b44-9dab-2be7d745a021"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aab1a2e8-4a92-4b42-8f39-463b89ba2b06"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dd69ae0c-1ddc-429a-a452-a522e7ad30e0"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bcc69a36-6ae3-4466-8537-38a9582cfaa1"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""af556836-ce4e-437f-8188-929e1e483594"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d71ebf75-33e0-44dc-a973-db5656e254ed"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -786,6 +951,12 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        // Shadow
+        m_Shadow = asset.FindActionMap("Shadow", throwIfNotFound: true);
+        m_Shadow_Crouch = m_Shadow.FindAction("Crouch", throwIfNotFound: true);
+        m_Shadow_Interact = m_Shadow.FindAction("Interact", throwIfNotFound: true);
+        m_Shadow_Jump = m_Shadow.FindAction("Jump", throwIfNotFound: true);
+        m_Shadow_Move = m_Shadow.FindAction("Move", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1003,6 +1174,63 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // Shadow
+    private readonly InputActionMap m_Shadow;
+    private IShadowActions m_ShadowActionsCallbackInterface;
+    private readonly InputAction m_Shadow_Crouch;
+    private readonly InputAction m_Shadow_Interact;
+    private readonly InputAction m_Shadow_Jump;
+    private readonly InputAction m_Shadow_Move;
+    public struct ShadowActions
+    {
+        private @InputActions m_Wrapper;
+        public ShadowActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Crouch => m_Wrapper.m_Shadow_Crouch;
+        public InputAction @Interact => m_Wrapper.m_Shadow_Interact;
+        public InputAction @Jump => m_Wrapper.m_Shadow_Jump;
+        public InputAction @Move => m_Wrapper.m_Shadow_Move;
+        public InputActionMap Get() { return m_Wrapper.m_Shadow; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ShadowActions set) { return set.Get(); }
+        public void SetCallbacks(IShadowActions instance)
+        {
+            if (m_Wrapper.m_ShadowActionsCallbackInterface != null)
+            {
+                @Crouch.started -= m_Wrapper.m_ShadowActionsCallbackInterface.OnCrouch;
+                @Crouch.performed -= m_Wrapper.m_ShadowActionsCallbackInterface.OnCrouch;
+                @Crouch.canceled -= m_Wrapper.m_ShadowActionsCallbackInterface.OnCrouch;
+                @Interact.started -= m_Wrapper.m_ShadowActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_ShadowActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_ShadowActionsCallbackInterface.OnInteract;
+                @Jump.started -= m_Wrapper.m_ShadowActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_ShadowActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_ShadowActionsCallbackInterface.OnJump;
+                @Move.started -= m_Wrapper.m_ShadowActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_ShadowActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_ShadowActionsCallbackInterface.OnMove;
+            }
+            m_Wrapper.m_ShadowActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Crouch.started += instance.OnCrouch;
+                @Crouch.performed += instance.OnCrouch;
+                @Crouch.canceled += instance.OnCrouch;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+            }
+        }
+    }
+    public ShadowActions @Shadow => new ShadowActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1067,5 +1295,12 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+    }
+    public interface IShadowActions
+    {
+        void OnCrouch(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
     }
 }
