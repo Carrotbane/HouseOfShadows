@@ -703,6 +703,116 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Shadow"",
+            ""id"": ""59a63e42-217f-4257-abcf-47de3b3ffbc2"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""abb2ce9c-5912-4fef-9261-f45a29a32778"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""a7ae790a-ef96-43e2-9c52-4044e8371760"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Crouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""f22989f8-aef7-4c82-93d7-797f97609956"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""60ec7eb9-2993-4a61-a1a1-8f4629b1c8d9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""256ed699-d065-4012-a384-2b6f4842559b"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fd421740-9df2-41a9-a63c-b3986022f457"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e09d6ab0-4dd8-4a60-8737-c66e7b10db65"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Sideways"",
+                    ""id"": ""0d96c538-7d82-464d-8914-f31ef780ffae"",
+                    ""path"": ""Dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""5beb3040-a361-4cef-854d-be03e8623fd5"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""1353551f-0583-403f-80ae-5943d7a8c6f6"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -786,6 +896,12 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        // Shadow
+        m_Shadow = asset.FindActionMap("Shadow", throwIfNotFound: true);
+        m_Shadow_Move = m_Shadow.FindAction("Move", throwIfNotFound: true);
+        m_Shadow_Jump = m_Shadow.FindAction("Jump", throwIfNotFound: true);
+        m_Shadow_Crouch = m_Shadow.FindAction("Crouch", throwIfNotFound: true);
+        m_Shadow_Interact = m_Shadow.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1003,6 +1119,63 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // Shadow
+    private readonly InputActionMap m_Shadow;
+    private IShadowActions m_ShadowActionsCallbackInterface;
+    private readonly InputAction m_Shadow_Move;
+    private readonly InputAction m_Shadow_Jump;
+    private readonly InputAction m_Shadow_Crouch;
+    private readonly InputAction m_Shadow_Interact;
+    public struct ShadowActions
+    {
+        private @InputActions m_Wrapper;
+        public ShadowActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_Shadow_Move;
+        public InputAction @Jump => m_Wrapper.m_Shadow_Jump;
+        public InputAction @Crouch => m_Wrapper.m_Shadow_Crouch;
+        public InputAction @Interact => m_Wrapper.m_Shadow_Interact;
+        public InputActionMap Get() { return m_Wrapper.m_Shadow; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ShadowActions set) { return set.Get(); }
+        public void SetCallbacks(IShadowActions instance)
+        {
+            if (m_Wrapper.m_ShadowActionsCallbackInterface != null)
+            {
+                @Move.started -= m_Wrapper.m_ShadowActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_ShadowActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_ShadowActionsCallbackInterface.OnMove;
+                @Jump.started -= m_Wrapper.m_ShadowActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_ShadowActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_ShadowActionsCallbackInterface.OnJump;
+                @Crouch.started -= m_Wrapper.m_ShadowActionsCallbackInterface.OnCrouch;
+                @Crouch.performed -= m_Wrapper.m_ShadowActionsCallbackInterface.OnCrouch;
+                @Crouch.canceled -= m_Wrapper.m_ShadowActionsCallbackInterface.OnCrouch;
+                @Interact.started -= m_Wrapper.m_ShadowActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_ShadowActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_ShadowActionsCallbackInterface.OnInteract;
+            }
+            m_Wrapper.m_ShadowActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @Crouch.started += instance.OnCrouch;
+                @Crouch.performed += instance.OnCrouch;
+                @Crouch.canceled += instance.OnCrouch;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
+            }
+        }
+    }
+    public ShadowActions @Shadow => new ShadowActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1067,5 +1240,12 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+    }
+    public interface IShadowActions
+    {
+        void OnMove(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnCrouch(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

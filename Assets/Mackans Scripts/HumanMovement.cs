@@ -7,7 +7,8 @@ using UnityEngine.InputSystem;
 public class HumanMovement : MonoBehaviour
 {
     [SerializeField] private InputActionReference movement, jump, interact, crouch;
-    [SerializeField] private float moveSpeed = 2;
+    [SerializeField] private float maxMoveSpeed = 4;
+    private float moveSpeed;
     
     
     // Start is called before the first frame update
@@ -19,6 +20,8 @@ public class HumanMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        moveSpeed = maxMoveSpeed;
+        
         if (movement.action.IsPressed())
             MoveAction();
 
@@ -35,6 +38,8 @@ public class HumanMovement : MonoBehaviour
             moveDir * Time.deltaTime * moveSpeed,
             0,
             0);
+
+        Debug.Log("YOU SHOULD MOVE");
     }
 
     private void JumpAction()
