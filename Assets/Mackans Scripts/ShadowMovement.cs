@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 
 public class ShadowMovement : MonoBehaviour
 {
-    [SerializeField] private InputActionReference movement, jump, interact, crouch;
     [SerializeField] private float moveSpeed = 2;
+    private float moveDir;
     
     
     // Start is called before the first frame update
@@ -19,22 +19,22 @@ public class ShadowMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (movement.action.IsPressed())
-            MoveAction();
-
-        if (jump.action.IsPressed())
-            JumpAction();
-
-        CrouchAction();
-    }
-
-    private void MoveAction()
-    {
-        float moveDir = movement.action.ReadValue<Vector2>().x;
         transform.position += new Vector3(
             moveDir * Time.deltaTime * moveSpeed,
             0,
             0);
+        
+    }
+
+    private void MoveAction()
+    {
+        
+    }
+
+    public void MoveEvent(InputAction.CallbackContext context)
+    {
+        Debug.Log("MOVE SHADOW");
+        moveDir = context.action.ReadValue<Vector2>().x;
     }
 
     private void JumpAction()
@@ -49,26 +49,24 @@ public class ShadowMovement : MonoBehaviour
 
     private void CrouchAction()
     {
-        if (crouch.action.WasPressedThisFrame())
-        {
-            Debug.Log("CROUCH");
-            transform.localScale = new Vector3(1, 0.5f, 1);
+        
+        Debug.Log("CROUCH");
+        transform.localScale = new Vector3(1, 0.5f, 1);
 
-            transform.localPosition -= new Vector3(
-                0, 0.5f, 0);
+        transform.localPosition -= new Vector3(
+            0, 0.5f, 0);
 
-            moveSpeed /= 2f;
-        }
+        moveSpeed /= 2f;
+    
 
-        if (crouch.action.WasReleasedThisFrame())
-        {
-            Debug.Log("STAND UP");
-            transform.localScale = new Vector3(1, 1f, 1);
-            
-            transform.localPosition += new Vector3(
-                0, 0.5f, 0);
+    
+        Debug.Log("STAND UP");
+        transform.localScale = new Vector3(1, 1f, 1);
+        
+        transform.localPosition += new Vector3(
+            0, 0.5f, 0);
 
-            moveSpeed *= 2f;
-        }
+        moveSpeed *= 2f;
+        
     }
 }

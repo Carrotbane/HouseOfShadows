@@ -6,7 +6,7 @@
             "id": "bca60020-2291-4ef7-a3d0-8786df647a36",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "H_Move",
                     "type": "Value",
                     "id": "4f1b5b5e-2478-4928-b993-dc9ea005653d",
                     "expectedControlType": "Vector2",
@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Jump",
+                    "name": "H_Jump",
                     "type": "Button",
                     "id": "ca4b82d6-cf77-46b6-9d62-4bad42d7f438",
                     "expectedControlType": "Button",
@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Crouch",
+                    "name": "H_Crouch",
                     "type": "Button",
                     "id": "d7ad66fa-640d-4b84-ad57-1eb65d47be3c",
                     "expectedControlType": "Button",
@@ -33,9 +33,45 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Interact",
+                    "name": "H_Interact",
                     "type": "Button",
                     "id": "abf6828f-45ea-4c50-abac-276d14f90670",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "S_Move",
+                    "type": "Button",
+                    "id": "40b561fa-42ae-498a-b56b-9119a294ba9f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "S_Jump",
+                    "type": "Button",
+                    "id": "b7d619f8-033c-496d-a5d1-2c6680c02225",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "S_Crouch",
+                    "type": "Button",
+                    "id": "5cb1d32c-ddf9-437e-8dc2-7d698821031a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "S_Interact",
+                    "type": "Button",
+                    "id": "bdeb26a6-eb0b-41ad-8626-45b57dc266ba",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -50,73 +86,84 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Shadow",
-                    "action": "Move",
+                    "action": "H_Move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "left",
                     "id": "935681f6-f725-446d-bddd-f44b7fe12608",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Shadow",
-                    "action": "Move",
+                    "groups": "",
+                    "action": "H_Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
                     "id": "367b6842-3ecf-42cf-8ded-3be669a916b9",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Shadow",
-                    "action": "Move",
+                    "groups": "",
+                    "action": "H_Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "Sideways",
-                    "id": "228e195c-d6c3-4a56-acb3-f263b5620d51",
+                    "id": "99798610-713f-40aa-aa8a-9003a01cd91a",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "S_Move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "left",
-                    "id": "c02f8551-14f4-4d34-af7a-0377b38d523f",
-                    "path": "<Keyboard>/a",
+                    "id": "7d995f80-3234-4dd6-ba5a-eca67319b958",
+                    "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Human",
-                    "action": "Move",
+                    "groups": "",
+                    "action": "S_Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "aa058d71-c249-487a-a491-0715f2396183",
-                    "path": "<Keyboard>/d",
+                    "id": "d50cb860-df96-49b1-aaa8-b7659dd4379c",
+                    "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Human",
-                    "action": "Move",
+                    "groups": "",
+                    "action": "S_Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "",
-                    "id": "d1d1b4ad-979b-41ca-bf07-a7a68a8dcc2c",
+                    "id": "c67788f5-ffc2-4e78-8e42-a7fbcc3d8a19",
                     "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
                     "groups": "Shadow",
-                    "action": "Jump",
+                    "action": "S_Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d131263a-477b-4efd-99a5-370be337a884",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Shadow",
+                    "action": "S_Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -126,41 +173,19 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Human",
-                    "action": "Jump",
+                    "groups": "",
+                    "action": "H_Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "44a03602-1f49-44f1-8aa7-c6b575c43386",
-                    "path": "<Keyboard>/k",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Shadow",
-                    "action": "Crouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ef94ba85-6767-4fa2-80ac-bfc313e3f229",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Human",
-                    "action": "Crouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "49eb5673-084d-44c5-8e38-2c8e237e5c58",
+                    "id": "1ee3ec60-38ed-495d-b3f5-9cb1d3eee2d0",
                     "path": "<Keyboard>/o",
                     "interactions": "",
                     "processors": "",
                     "groups": "Shadow",
-                    "action": "Interact",
+                    "action": "S_Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -170,8 +195,19 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Human",
-                    "action": "Interact",
+                    "groups": "Keyboard",
+                    "action": "H_Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ef94ba85-6767-4fa2-80ac-bfc313e3f229",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "H_Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -411,7 +447,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Human",
+                    "groups": "Keyboard",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -422,7 +458,7 @@
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Human",
+                    "groups": "Keyboard",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -433,7 +469,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Human",
+                    "groups": "Keyboard",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -444,7 +480,7 @@
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Human",
+                    "groups": "Keyboard",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -455,7 +491,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Human",
+                    "groups": "Keyboard",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -466,7 +502,7 @@
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Human",
+                    "groups": "Keyboard",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -477,7 +513,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Human",
+                    "groups": "Keyboard",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -488,7 +524,7 @@
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Human",
+                    "groups": "Keyboard",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -521,7 +557,7 @@
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Human",
+                    "groups": "Keyboard",
                     "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -532,7 +568,7 @@
                     "path": "<Pen>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Human",
+                    "groups": "Keyboard",
                     "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -543,7 +579,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Human",
+                    "groups": ";Keyboard",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -554,7 +590,7 @@
                     "path": "<Pen>/tip",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Human",
+                    "groups": ";Keyboard",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -565,7 +601,7 @@
                     "path": "<Mouse>/scroll",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Human",
+                    "groups": ";Keyboard",
                     "action": "ScrollWheel",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -576,7 +612,7 @@
                     "path": "<Mouse>/middleButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Human",
+                    "groups": ";Keyboard",
                     "action": "MiddleClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -587,7 +623,7 @@
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Human",
+                    "groups": ";Keyboard",
                     "action": "RightClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -597,11 +633,16 @@
     ],
     "controlSchemes": [
         {
-            "name": "Human",
-            "bindingGroup": "Human",
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
                     "isOptional": false,
                     "isOR": false
                 }
