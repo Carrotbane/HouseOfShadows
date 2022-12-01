@@ -138,6 +138,8 @@ GameObject:
   - component: {fileID: 5249584333773945165}
   - component: {fileID: 5249584333773945271}
   - component: {fileID: 5249584333773945164}
+  - component: {fileID: 3425233629705469603}
+  - component: {fileID: 3570048868696921365}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -327,22 +329,52 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 74aee56a-aad3-457e-ba5b-f649b19f8980
-    m_ActionName: Human/Move[/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+    m_ActionId: 4f1b5b5e-2478-4928-b993-dc9ea005653d
+    m_ActionName: Player/Move[/Keyboard/j,/Keyboard/l,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 8b2aa78c-9af5-44de-bd4d-8547a8fb773d
-    m_ActionName: Human/Jump[/Keyboard/space]
+    m_ActionId: ca4b82d6-cf77-46b6-9d62-4bad42d7f438
+    m_ActionName: Player/Jump[/Keyboard/i,/Keyboard/space]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 6cda1408-a2b2-4d44-b4e9-e36b1791faf3
-    m_ActionName: Human/Interact[/Keyboard/w]
+    m_ActionId: d7ad66fa-640d-4b84-ad57-1eb65d47be3c
+    m_ActionName: Player/Crouch[/Keyboard/k,/Keyboard/s]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 79a9cc6f-4419-4837-ad5c-e05b1ac16635
-    m_ActionName: Human/Crouch[/Keyboard/s]
+    m_ActionId: abf6828f-45ea-4c50-abac-276d14f90670
+    m_ActionName: Player/Interact[/Keyboard/o,/Keyboard/w]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard&Mouse
-  m_DefaultActionMap: Human
+  m_DefaultControlScheme: Human
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &3425233629705469603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5249584333773945166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25684302d58b28849b0736101ede413c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 0
+--- !u!114 &3570048868696921365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5249584333773945166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92af55f9b19f15b48b446d6e2b9762b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 1758886869528963321, guid: 857ece7fd6b284c4b8f2e86ca0b11b1d, type: 3}
+  jump: {fileID: 6408726943504855287, guid: 857ece7fd6b284c4b8f2e86ca0b11b1d, type: 3}
+  interact: {fileID: -2005521569907456237, guid: 857ece7fd6b284c4b8f2e86ca0b11b1d, type: 3}
+  crouch: {fileID: 9115926756683393835, guid: 857ece7fd6b284c4b8f2e86ca0b11b1d, type: 3}
+  maxMoveSpeed: 4
