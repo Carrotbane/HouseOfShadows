@@ -17,7 +17,7 @@ public class HumanMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (movement.action.IsPressed())
             MoveAction();
