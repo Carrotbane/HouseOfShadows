@@ -5,15 +5,20 @@ using UnityEngine;
 
 public class GroundTrigger : MonoBehaviour
 {
-    [SerializeField] private GameObject parentEntity;
-    
-    private void OnTriggerEnter2D(Collider2D col)
+    private HumanCore _humanCore;
+
+    private void Start()
     {
-        parentEntity.GetComponent<HumanCore>().isGrounded = true;
+        _humanCore = GetComponentInParent<HumanCore>();
+    }
+
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        _humanCore.isGrounded = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        parentEntity.GetComponent<HumanCore>().isGrounded = false;
+        _humanCore.isGrounded = false;
     }
 }

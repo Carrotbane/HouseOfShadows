@@ -5,15 +5,20 @@ using UnityEngine;
 
 public class GroundTriggerShadow : MonoBehaviour
 {
-    [SerializeField] private GameObject parentEntity;
-    
-    private void OnTriggerEnter2D(Collider2D col)
+    private ShadowCore _shadowCore;
+
+    private void Start()
     {
-        parentEntity.GetComponent<ShadowCore>().isGroundedShadow = true;
+        _shadowCore = GetComponentInParent<ShadowCore>();
+    }
+
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        _shadowCore.isGrounded = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        parentEntity.GetComponent<ShadowCore>().isGroundedShadow = false;
+        _shadowCore.isGrounded = false;
     }
 }

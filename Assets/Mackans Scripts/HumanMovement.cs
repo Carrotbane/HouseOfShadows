@@ -7,55 +7,81 @@ using UnityEngine.InputSystem;
 public class HumanMovement : MonoBehaviour
 {
     [SerializeField] private float maxMoveSpeed = 4;
-    private float moveSpeed;
-    private float moveDir;
-    private bool isCrouching, crouchDone = false;
-    
-    
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float jumpForce = 6;
+    [SerializeField] private float acceleration = 16;
+    [SerializeField] private float retardation = 16;
+    [SerializeField] private float airStrafeModifier = 0.4f;
+    private float moveSpeed, moveAxis, moveValue, moveDirection, currentAccel, currentRetard;
+    private bool isCrouching, crouchDone;
+    private HumanCore humanCore;
+
+    private void Start()
     {
-        
+        humanCore = GetComponent<HumanCore>();
     }
 
-    // Update is called once per frame
+    // Update is called once per frame. Calls upon the crouch and interaction actions
     private void Update()
     {
-        MoveAction();
-
         CrouchAction();
-
         InteractAction();
     }
 
-    private void MoveAction()
+    // The FixedUpdate method is a physics based update, which movement should be part of
+    private void FixedUpdate()
     {
-        moveSpeed = maxMoveSpeed;
-        transform.position += new Vector3(
-            moveDir * Time.deltaTime * moveSpeed,
-            0,
-            0);
+        MoveAction();
     }
 
+    //Event method for movement input
     public void MoveEvent(InputAction.CallbackContext context)
     {
-        Debug.Log("MOVE HUMAN");
-        moveDir = context.action.ReadValue<Vector2>().x;
+        //Movement direction is saved at every change in input value...
+        //E.g. Is 1 or -1 if moving left or right, and 0 when button is released
+        moveValue = context.action.ReadValue<Vector2>().x;
     }
 
-    private void JumpAction()
+    //Method which calculates current movement
+    private void MoveAction()
     {
-        if (GetComponent<HumanCore>().isGrounded)
-        {
-            Debug.Log("JUMPING AMOGNSU");
-            GetComponent<Rigidbody2D>().velocity = new Vector2(
-                0, 6);
-        }
+        bool isInput = !moveValue.Equals(0f);
+        
+        currentAccel = humanCore.isGrounded ? acceleration : acceleration * airStrafeModifier;
+        currentRetard = humanCore.isGrounded ? retardation : retardation * airStrafeModifier;
+        
+        //Changes movement direction if speed is zero, to allow for deacceleration in previous movement
+        if (moveSpeed.Equals(0f)) 
+            moveDirection = moveValue;
+        
+        //Increases or decreases current movement speed based on user input
+        if (isInput && moveDirection.Equals(moveValue))
+            moveSpeed += currentAccel * Time.fixedDeltaTime;
+        else
+            moveSpeed -= currentRetard * Time.fixedDeltaTime;
+        
+        //Clamps movespeed in order to not exceed the max speed, or fall below 0
+        moveSpeed = Mathf.Clamp(moveSpeed, 0, maxMoveSpeed);
+
+        //Stores the movement direction of last movement input in order to go to a smooth stop after key release
+        
+        transform.position += new Vector3(
+            moveDirection * moveSpeed * Time.fixedDeltaTime, 0, 0);
     }
 
     public void JumpEvent(InputAction.CallbackContext context)
     {
-        
+        if (context.action.WasPressedThisFrame())
+            JumpAction();
+    }
+
+    private void JumpAction()
+    {
+        if (humanCore.isGrounded)
+        {
+            Debug.Log("JUMPING AMOGNSU");
+            GetComponent<Rigidbody2D>().velocity = new Vector2(
+                0, jumpForce);
+        }
     }
 
     private void CrouchAction()
@@ -84,16 +110,15 @@ public class HumanMovement : MonoBehaviour
     public void CrouchEvent(InputAction.CallbackContext context)
     {
         isCrouching = Mathf.Round(context.action.ReadValue<float>()).Equals(1);
-        
-        
-        //isCrouching = context.action.ReadValue<float>();
-        Debug.Log(context.action.ReadValue<float>());
     }
     
     private void InteractAction()
     {
         
     }
-    
-    public void InteractEvent(InputAction.CallbackContext context) {}
+
+    public void InteractEvent(InputAction.CallbackContext context)
+    {
+        
+    }
 }

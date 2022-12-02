@@ -5,6 +5,6 @@ using UnityEngine;
 
 public class ShadowCore : MonoBehaviour
 {
-    [HideInInspector] public bool isGroundedShadow;
+    [HideInInspector] public bool isGrounded;
     
 }
