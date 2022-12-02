@@ -11,7 +11,7 @@ public class HumanMovement : MonoBehaviour
     [SerializeField] private float acceleration = 16;
     [SerializeField] private float retardation = 16;
     [SerializeField] private float airStrafeModifier = 0.4f;
-    private float moveSpeed, moveAxis, moveValue, moveDirection, currentAccel, currentRetard;
+    private float moveSpeed, moveDirection, currentAccel, currentRetard, moveValue;
     private bool isCrouching, crouchDone;
     private HumanCore humanCore;
 
@@ -20,25 +20,16 @@ public class HumanMovement : MonoBehaviour
         humanCore = GetComponent<HumanCore>();
     }
 
-    // Update is called once per frame. Calls upon the crouch and interaction actions
+    // Update is called once per frame. Calls upon the crouch action
     private void Update()
     {
         CrouchAction();
-        InteractAction();
     }
 
     // The FixedUpdate method is a physics based update, which movement should be part of
     private void FixedUpdate()
     {
         MoveAction();
-    }
-
-    //Event method for movement input
-    public void MoveEvent(InputAction.CallbackContext context)
-    {
-        //Movement direction is saved at every change in input value...
-        //E.g. Is 1 or -1 if moving left or right, and 0 when button is released
-        moveValue = context.action.ReadValue<Vector2>().x;
     }
 
     //Method which calculates current movement
@@ -68,17 +59,10 @@ public class HumanMovement : MonoBehaviour
             moveDirection * moveSpeed * Time.fixedDeltaTime, 0, 0);
     }
 
-    public void JumpEvent(InputAction.CallbackContext context)
-    {
-        if (context.action.WasPressedThisFrame())
-            JumpAction();
-    }
-
     private void JumpAction()
     {
         if (humanCore.isGrounded)
         {
-            Debug.Log("JUMPING AMOGNSU");
             GetComponent<Rigidbody2D>().velocity = new Vector2(
                 0, jumpForce);
         }
@@ -107,18 +91,26 @@ public class HumanMovement : MonoBehaviour
         }
     }
 
+    //Event method for movement input
+    public void MoveEvent(InputAction.CallbackContext context)
+    {
+        //Movement direction is saved at every change in input value...
+        //E.g. Is 1 or -1 if moving left or right, and 0 when button is released
+        moveValue = context.action.ReadValue<Vector2>().x;
+    }
+
+    public void JumpEvent(InputAction.CallbackContext context)
+    {
+        if (context.action.WasPerformedThisFrame())
+        {
+            Debug.Log("Performed Jump");
+        }
+        if (context.action.WasPerformedThisFrame())
+            JumpAction();
+    }
+
     public void CrouchEvent(InputAction.CallbackContext context)
     {
         isCrouching = Mathf.Round(context.action.ReadValue<float>()).Equals(1);
-    }
-    
-    private void InteractAction()
-    {
-        
-    }
-
-    public void InteractEvent(InputAction.CallbackContext context)
-    {
-        
     }
 }

@@ -65,30 +65,12 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""S_Move"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""40b561fa-42ae-498a-b56b-9119a294ba9f"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""S_Jump"",
-                    ""type"": ""Button"",
-                    ""id"": ""b7d619f8-033c-496d-a5d1-2c6680c02225"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""S_Crouch"",
-                    ""type"": ""Button"",
-                    ""id"": ""5cb1d32c-ddf9-437e-8dc2-7d698821031a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""S_Interact"",
@@ -135,61 +117,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Sideways"",
-                    ""id"": ""99798610-713f-40aa-aa8a-9003a01cd91a"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""S_Move"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""7d995f80-3234-4dd6-ba5a-eca67319b958"",
-                    ""path"": ""<Keyboard>/j"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""S_Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""d50cb860-df96-49b1-aaa8-b7659dd4379c"",
-                    ""path"": ""<Keyboard>/l"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""S_Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c67788f5-ffc2-4e78-8e42-a7fbcc3d8a19"",
-                    ""path"": ""<Keyboard>/i"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Shadow"",
-                    ""action"": ""S_Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d131263a-477b-4efd-99a5-370be337a884"",
-                    ""path"": ""<Keyboard>/k"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Shadow"",
-                    ""action"": ""S_Crouch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
                     ""name"": """",
                     ""id"": ""913fb41a-f745-4dfc-bf72-d65a8ef2d605"",
                     ""path"": ""<Keyboard>/space"",
@@ -232,6 +159,61 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""action"": ""H_Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Arrow Keys"",
+                    ""id"": ""8d4323c7-a40f-4a29-90cd-b49356df5658"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""S_Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""23a4ef03-bbbc-4ab3-ba35-56743e725290"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""S_Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""4019b08a-4971-497b-b4a1-b3e03acd093e"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""S_Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""f09f3f77-ecd6-4d1f-98b3-b294f737022b"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""S_Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""74bd615e-71c6-4049-9bba-0ff4e39c631c"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""S_Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -701,8 +683,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         m_Player_H_Crouch = m_Player.FindAction("H_Crouch", throwIfNotFound: true);
         m_Player_H_Interact = m_Player.FindAction("H_Interact", throwIfNotFound: true);
         m_Player_S_Move = m_Player.FindAction("S_Move", throwIfNotFound: true);
-        m_Player_S_Jump = m_Player.FindAction("S_Jump", throwIfNotFound: true);
-        m_Player_S_Crouch = m_Player.FindAction("S_Crouch", throwIfNotFound: true);
         m_Player_S_Interact = m_Player.FindAction("S_Interact", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -780,8 +760,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_H_Crouch;
     private readonly InputAction m_Player_H_Interact;
     private readonly InputAction m_Player_S_Move;
-    private readonly InputAction m_Player_S_Jump;
-    private readonly InputAction m_Player_S_Crouch;
     private readonly InputAction m_Player_S_Interact;
     public struct PlayerActions
     {
@@ -792,8 +770,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         public InputAction @H_Crouch => m_Wrapper.m_Player_H_Crouch;
         public InputAction @H_Interact => m_Wrapper.m_Player_H_Interact;
         public InputAction @S_Move => m_Wrapper.m_Player_S_Move;
-        public InputAction @S_Jump => m_Wrapper.m_Player_S_Jump;
-        public InputAction @S_Crouch => m_Wrapper.m_Player_S_Crouch;
         public InputAction @S_Interact => m_Wrapper.m_Player_S_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -819,12 +795,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @S_Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnS_Move;
                 @S_Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnS_Move;
                 @S_Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnS_Move;
-                @S_Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnS_Jump;
-                @S_Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnS_Jump;
-                @S_Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnS_Jump;
-                @S_Crouch.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnS_Crouch;
-                @S_Crouch.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnS_Crouch;
-                @S_Crouch.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnS_Crouch;
                 @S_Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnS_Interact;
                 @S_Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnS_Interact;
                 @S_Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnS_Interact;
@@ -847,12 +817,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @S_Move.started += instance.OnS_Move;
                 @S_Move.performed += instance.OnS_Move;
                 @S_Move.canceled += instance.OnS_Move;
-                @S_Jump.started += instance.OnS_Jump;
-                @S_Jump.performed += instance.OnS_Jump;
-                @S_Jump.canceled += instance.OnS_Jump;
-                @S_Crouch.started += instance.OnS_Crouch;
-                @S_Crouch.performed += instance.OnS_Crouch;
-                @S_Crouch.canceled += instance.OnS_Crouch;
                 @S_Interact.started += instance.OnS_Interact;
                 @S_Interact.performed += instance.OnS_Interact;
                 @S_Interact.canceled += instance.OnS_Interact;
@@ -999,8 +963,6 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         void OnH_Crouch(InputAction.CallbackContext context);
         void OnH_Interact(InputAction.CallbackContext context);
         void OnS_Move(InputAction.CallbackContext context);
-        void OnS_Jump(InputAction.CallbackContext context);
-        void OnS_Crouch(InputAction.CallbackContext context);
         void OnS_Interact(InputAction.CallbackContext context);
     }
     public interface IUIActions
