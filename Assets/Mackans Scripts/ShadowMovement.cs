@@ -6,9 +6,9 @@ using UnityEngine.InputSystem;
 
 public class ShadowMovement : MonoBehaviour
 {
-    [SerializeField] private float maxMoveSpeed = 4;
-    [SerializeField] private float acceleration = 16;
-    [SerializeField] private float retardation = 32;
+    [SerializeField] private float maxMoveSpeed = 4f;
+    [SerializeField] private float acceleration = 6f;
+    [SerializeField] private float retardMod = -1f;
     private float moveSpeedX, moveSpeedY, moveDirectionX, moveDirectionY;
     private Vector2 moveVector;
 
@@ -21,23 +21,15 @@ public class ShadowMovement : MonoBehaviour
     //Method which calculates current movement
     private void MoveAction()
     {
-        bool isXInput = !moveVector.x.Equals(0);
-        bool isYInput = !moveVector.y.Equals(0);
-        
         //Changes movement direction if speed is zero, to allow for deacceleration in previous movement
         ChangeMoveDirectionIfStill(moveSpeedX, ref moveDirectionX, moveVector, 'x');
         ChangeMoveDirectionIfStill(moveSpeedY, ref moveDirectionY, moveVector, 'y');
 
         //Increases or decreases current movement speed based on user input
-        if (isXInput && moveDirectionX.Equals(moveVector.x))
-            moveSpeedX += acceleration * Time.fixedDeltaTime;
-        else
-            moveSpeedX -= retardation * Time.fixedDeltaTime;
-        
-        if (isYInput && moveDirectionY.Equals(moveVector.y))
-            moveSpeedY += acceleration * Time.fixedDeltaTime;
-        else
-            moveSpeedY -= retardation * Time.fixedDeltaTime;
+        bool isXInput = !moveVector.x.Equals(0);
+        bool isYInput = !moveVector.y.Equals(0);
+        ChangeSpeedInDirection(isXInput, moveDirectionX, moveVector, 'x', ref moveSpeedX);
+        ChangeSpeedInDirection(isYInput, moveDirectionY, moveVector, 'y', ref moveSpeedY);
         
         //Clamps movespeed in order to not exceed the max speed, or fall below 0
         moveSpeedX = Mathf.Clamp(moveSpeedX, 0, maxMoveSpeed);
@@ -47,6 +39,14 @@ public class ShadowMovement : MonoBehaviour
         transform.position += new Vector3(
             moveDirectionX * moveSpeedX * Time.fixedDeltaTime, 
             moveDirectionY * moveSpeedY * Time.fixedDeltaTime, 0);
+    }
+
+    private void ChangeSpeedInDirection(bool isInput, float moveDir, Vector2 vector, char axis, ref float speed)
+    {
+        float vectorValue = axis.Equals('x') ? vector.x : vector.y;
+        speed += isInput && moveDir.Equals(vectorValue)
+            ? acceleration * Time.fixedDeltaTime
+            : acceleration * retardMod * Time.fixedDeltaTime;
     }
 
     private void ChangeMoveDirectionIfStill(float speed, ref float dir, Vector2 vector, char axis)
