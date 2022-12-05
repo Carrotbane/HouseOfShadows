@@ -12,7 +12,7 @@ public class HumanMovement : MonoBehaviour
     [SerializeField] private float retardMod = -6f;
     [SerializeField] private float airStrafeModifier = 0.5f;
     private float acceleration, retardation, moveSpeed, moveDirection, moveValue, currentAccel, currentRetard;
-    private bool isCrouching, crouchDone;
+    private bool isJumping, isCrouching, crouchDone;
     private HumanCore humanCore;
 
     private void Start()
@@ -109,10 +109,6 @@ public class HumanMovement : MonoBehaviour
 
     public void JumpEvent(InputAction.CallbackContext context)
     {
-        if (context.action.WasPerformedThisFrame())
-        {
-            Debug.Log("Performed Jump");
-        }
         if (context.action.WasPerformedThisFrame())
             JumpAction();
     }

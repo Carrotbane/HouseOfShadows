@@ -6,9 +6,10 @@ using UnityEngine.InputSystem;
 
 public class ShadowMovement : MonoBehaviour
 {
-    [SerializeField] private float maxMoveSpeed = 4f;
-    [SerializeField] private float accelMod = 1.5f;
-    [SerializeField] private float retardMod = -1f;
+    [SerializeField] private float maxMoveSpeed = 5f;
+    [SerializeField] private float accelMod = 2f;
+    [SerializeField] private float retardMod = -3f;
+    [SerializeField] private float tiltInDegrees = 20f;
     private float moveSpeedX, moveSpeedY, moveDirectionX, moveDirectionY;
     private Vector2 moveVector;
 
@@ -34,6 +35,10 @@ public class ShadowMovement : MonoBehaviour
         //Clamps movespeed in order to not exceed the max speed, or fall below 0
         moveSpeedX = Mathf.Clamp(moveSpeedX, 0, maxMoveSpeed);
         moveSpeedY = Mathf.Clamp(moveSpeedY, 0, maxMoveSpeed);
+        
+        //Updates rotational tilt to simulate movement on X axis
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, 
+            tiltInDegrees * (moveSpeedX / maxMoveSpeed) * -moveDirectionX));
 
         //Calculates and updates position
         transform.position += new Vector3(
