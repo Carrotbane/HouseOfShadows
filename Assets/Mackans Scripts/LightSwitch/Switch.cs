@@ -7,11 +7,11 @@ public class Switch : MonoBehaviour
     public GameObject Target;
     public string OnMessage;
     public string OffMessage;
-    public bool IsLightOn;
+    public bool IsSwitchOn;
 
     public void SwitchOn()
     {
-        if (!IsLightOn)
+        if (!IsSwitchOn)
         {
             SetState(true);
         }
@@ -19,14 +19,14 @@ public class Switch : MonoBehaviour
 
     public void SwitchOff()
     {
-        if(IsLightOn)
+        if(IsSwitchOn)
         {
             SetState(false);
         }
     }
     public void Toggle()
     {
-        if(IsLightOn)
+        if(IsSwitchOn)
         {
             SwitchOff();
         }
@@ -38,7 +38,7 @@ public class Switch : MonoBehaviour
 
     void SetState(bool on)
     {
-        IsLightOn = on;
+        IsSwitchOn = on;
         if(on)
         {
             if(Target!=null && !string.IsNullOrEmpty(OnMessage))

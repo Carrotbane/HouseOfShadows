@@ -137,7 +137,6 @@ GameObject:
   - component: {fileID: 102176005}
   - component: {fileID: 102176004}
   - component: {fileID: 102176003}
-  - component: {fileID: 102176009}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -158,6 +157,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxMoveSpeed: 4
+  jumpForce: 16
+  accelMod: 4
+  retardMod: -6
+  airStrafeModifier: 0.5
 --- !u!114 &102176004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,18 +289,6 @@ Transform:
   m_Father: {fileID: 282272417}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &102176009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102176002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb8be35d76f826143a272560183903e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &170641893
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +322,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e14e63b2ce946c4cb8ab56d7ff6b670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  maxMoveSpeed: 5
+  accelMod: 2
+  retardMod: -3
+  tiltInDegrees: 20
 --- !u!114 &170641895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,7 +338,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bfac8b20f5a6c54480ba89686c611e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGroundedShadow: 0
 --- !u!61 &170641896
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -506,7 +499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f7a6567bfb4154898f6199a6e14538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentEntity: {fileID: 102176002}
 --- !u!61 &257497224
 BoxCollider2D:
   m_ObjectHideFlags: 0
