@@ -13,7 +13,7 @@ public class Light : MonoBehaviour
         MyCollider = GetComponent<Collider2D>();
     }
 
-    public void LightOn()
+    private void LightOn()
     {
         if(!IsLightOn)
         {
@@ -21,7 +21,7 @@ public class Light : MonoBehaviour
         }
     }
 
-    public void LightOff()
+    private void LightOff()
     {
         if(IsLightOn)
         {
@@ -46,6 +46,4 @@ public class Light : MonoBehaviour
         IsLightOn = on;
         MyCollider.isTrigger = on;
     }
-
-        
 }

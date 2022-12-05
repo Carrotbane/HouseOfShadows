@@ -84,7 +84,7 @@ public class HumanMovement : MonoBehaviour
             transform.localPosition -= new Vector3(
                 0, 0.5f, 0);
             
-            moveSpeed = maxMoveSpeed / 2f;
+            maxMoveSpeed /= 2f;
             crouchDone = true;
         }
         
@@ -94,7 +94,7 @@ public class HumanMovement : MonoBehaviour
             transform.localPosition += new Vector3(
                 0, 0.5f, 0);
 
-            moveSpeed = maxMoveSpeed;
+            maxMoveSpeed *= 2;
             crouchDone = false;
         }
     }
