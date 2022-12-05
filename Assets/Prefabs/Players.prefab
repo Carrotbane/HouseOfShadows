@@ -428,7 +428,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &6919995852668980823
 BoxCollider2D:
@@ -481,11 +481,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92af55f9b19f15b48b446d6e2b9762b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMoveSpeed: 5
-  jumpForce: 8
-  acceleration: 20
-  retardation: 40
-  airStrafeModifier: 0.4
+  maxMoveSpeed: 7
+  jumpForce: 16
+  accelMod: 4
+  retardMod: -6
+  airStrafeModifier: 0.5
 --- !u!1 &6970575820703828774
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,13 +588,13 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!61 &6970575820703828959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -645,6 +645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e14e63b2ce946c4cb8ab56d7ff6b670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMoveSpeed: 4
-  acceleration: 16
-  retardMod: -2
+  maxMoveSpeed: 5
+  accelMod: 2
+  retardMod: -3

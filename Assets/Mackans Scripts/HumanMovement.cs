@@ -6,18 +6,20 @@ using UnityEngine.InputSystem;
 
 public class HumanMovement : MonoBehaviour
 {
-    [SerializeField] private float maxMoveSpeed = 4;
-    [SerializeField] private float jumpForce = 6;
-    [SerializeField] private float acceleration = 16;
-    [SerializeField] private float retardation = 16;
-    [SerializeField] private float airStrafeModifier = 0.4f;
-    private float moveSpeed, moveDirection, currentAccel, currentRetard, moveValue;
+    [SerializeField] private float maxMoveSpeed = 7f;
+    [SerializeField] private float jumpForce = 16f;
+    [SerializeField] private float accelMod = 4f;
+    [SerializeField] private float retardMod = -6f;
+    [SerializeField] private float airStrafeModifier = 0.5f;
+    private float acceleration, retardation, moveSpeed, moveDirection, moveValue, currentAccel, currentRetard;
     private bool isCrouching, crouchDone;
     private HumanCore humanCore;
 
     private void Start()
     {
         humanCore = GetComponent<HumanCore>();
+        acceleration = maxMoveSpeed * accelMod;
+        retardation = maxMoveSpeed * retardMod;
     }
 
     // Update is called once per frame. Calls upon the crouch action
@@ -35,28 +37,34 @@ public class HumanMovement : MonoBehaviour
     //Method which calculates current movement
     private void MoveAction()
     {
-        bool isInput = !moveValue.Equals(0f);
-        
-        currentAccel = humanCore.isGrounded ? acceleration : acceleration * airStrafeModifier;
-        currentRetard = humanCore.isGrounded ? retardation : retardation * airStrafeModifier;
-        
         //Changes movement direction if speed is zero, to allow for deacceleration in previous movement
-        if (moveSpeed.Equals(0f)) 
-            moveDirection = moveValue;
+        ChangeMoveDirectionIfStill();
         
         //Increases or decreases current movement speed based on user input
-        if (isInput && moveDirection.Equals(moveValue))
-            moveSpeed += currentAccel * Time.fixedDeltaTime;
-        else
-            moveSpeed -= currentRetard * Time.fixedDeltaTime;
+        bool isInput = !moveValue.Equals(0f);
+        currentAccel = humanCore.isGrounded ? acceleration : acceleration * airStrafeModifier;
+        currentRetard = humanCore.isGrounded ? retardation : retardation * airStrafeModifier;
+        ChangeSpeedInDirection(isInput, moveValue, currentAccel, currentRetard, ref moveSpeed);
         
         //Clamps movespeed in order to not exceed the max speed, or fall below 0
         moveSpeed = Mathf.Clamp(moveSpeed, 0, maxMoveSpeed);
 
-        //Stores the movement direction of last movement input in order to go to a smooth stop after key release
-        
+        //Calculates and updates position
         transform.position += new Vector3(
             moveDirection * moveSpeed * Time.fixedDeltaTime, 0, 0);
+    }
+    
+    private void ChangeMoveDirectionIfStill()
+    {
+        if (moveSpeed.Equals(0f)) 
+            moveDirection = moveValue;
+    }
+    
+    private void ChangeSpeedInDirection(bool isInput, float axisValue, float curAccel, float curRetard, ref float speed)
+    {
+        speed += isInput && moveDirection.Equals(axisValue)
+            ? curAccel * Time.fixedDeltaTime
+            : curRetard * Time.fixedDeltaTime;
     }
 
     private void JumpAction()
