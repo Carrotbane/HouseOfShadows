@@ -9,6 +9,11 @@ public class Switch : MonoBehaviour
     public string OffMessage;
     public bool IsSwitchOn;
 
+    public void Use()
+    {
+        Toggle();
+    }
+
     public void SwitchOn()
     {
         if (!IsSwitchOn)

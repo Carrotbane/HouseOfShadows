@@ -24,15 +24,15 @@ public class HumanCore : MonoBehaviour
     {
         foreach (Collider2D col in InColliders)
         {
-            if (col.gameObject.CompareTag("Check"))
-            {
-                Debug.Log("Check");
-                continue;
-            }
             if (col.gameObject.CompareTag("Switch"))
             {
                 Debug.Log("Switch");
                 col.SendMessage("Use", SendMessageOptions.DontRequireReceiver);
+            }
+            else
+            {
+                Debug.Log("Check");
+                continue;
             }
         }
     }
