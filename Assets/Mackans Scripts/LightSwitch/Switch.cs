@@ -36,19 +36,19 @@ public class Switch : MonoBehaviour
         }
     }
 
-    void SetState(bool on)
+    void SetState(bool state)
     {
-        IsSwitchOn = on;
-        if(on)
+        IsSwitchOn = state;
+        if (state)
         {
-            if(Target!=null && !string.IsNullOrEmpty(OnMessage))
+            if(Target != null && !string.IsNullOrEmpty(OnMessage))
             {
                 Target.SendMessage(OnMessage);
             }
         }
         else
         {
-            if (Target!= null && !string.IsNullOrEmpty(OffMessage))
+            if (Target != null && !string.IsNullOrEmpty(OffMessage))
             {
                 Target.SendMessage(OffMessage);
             }

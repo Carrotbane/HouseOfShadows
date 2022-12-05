@@ -500,7 +500,7 @@ GameObject:
   - component: {fileID: 6970575820703828959}
   - component: {fileID: 6970575820703828957}
   - component: {fileID: 6970575820703828958}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -648,3 +648,4 @@ MonoBehaviour:
   maxMoveSpeed: 5
   accelMod: 2
   retardMod: -3
+  tiltInDegrees: 20
