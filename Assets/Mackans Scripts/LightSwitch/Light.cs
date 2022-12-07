@@ -4,46 +4,25 @@ using UnityEngine;
 
 public class Light : MonoBehaviour
 {
-    public bool IsLightOn;
-
-    Collider2D MyCollider;
+    public bool IsLightOn = true;
+    private PolygonCollider2D lightCollider;
+    private MeshRenderer lightRenderer;
 
     void Start()
     {
-        MyCollider = GetComponent<Collider2D>();
-    }
-
-    private void LightOn()
-    {
-        if(!IsLightOn)
-        {
-            SetState(true);
-        }
-    }
-
-    private void LightOff()
-    {
-        if(IsLightOn)
-        {
-            SetState(false);
-        }
+        lightCollider = GetComponent<PolygonCollider2D>();
+        lightRenderer = GetComponent<MeshRenderer>();
     }
 
     public void Toggle()
     {
-        if(IsLightOn)
-        {
-            LightOff();
-        }
-        else
-        {
-            LightOn();
-        }
+        IsLightOn = !IsLightOn;
+        SetState(IsLightOn);
     }
 
-    void SetState(bool on)
+    void SetState(bool state)
     {
-        IsLightOn = on;
-        MyCollider.isTrigger = on;
+        lightCollider.isTrigger = !state;
+        lightRenderer.enabled = state;
     }
 }

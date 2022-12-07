@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,18 +23,9 @@ public class HumanCore : MonoBehaviour
     
     private void InteractAction()
     {
-        foreach (Collider2D col in InColliders)
+        foreach (var col in InColliders.Where(col => col.gameObject.CompareTag("Switch")))
         {
-            if (col.gameObject.CompareTag("Switch"))
-            {
-                Debug.Log("Switch");
-                col.SendMessage("Use", SendMessageOptions.DontRequireReceiver);
-            }
-            else
-            {
-                Debug.Log("Check");
-                continue;
-            }
+            col.SendMessage("Use", SendMessageOptions.DontRequireReceiver);
         }
     }
     
