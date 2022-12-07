@@ -12,6 +12,7 @@ public class HumanMovement : MonoBehaviour
     [SerializeField] private float retardMod = -6f;
     [SerializeField] private float airStrafeModifier = 0.5f;
     private float acceleration, retardation, moveSpeed, moveDirection, moveValue, currentAccel, currentRetard;
+    private float xVelocity, yVelocity;
     private bool isJumping, isCrouching, crouchDone;
     private HumanCore humanCore;
     private Rigidbody2D rigidBody;
@@ -39,44 +40,38 @@ public class HumanMovement : MonoBehaviour
     //Method which calculates current movement
     private void MoveAction()
     {
-        /*
-        //Changes movement direction only if speed is zero, to allow for deacceleration in previous movement
-        ChangeMoveDirectionIfStill();
+        xVelocity = rigidBody.velocity.x;
+        yVelocity = rigidBody.velocity.y;
+
+        moveSpeed = Mathf.Abs(xVelocity);
         
+        //Changes movement direction if speed is zero, to allow for deacceleration in previous movement
+        ChangeMoveDirectionIfStill();
+
         //Increases or decreases current movement speed based on user input
         bool isInput = !moveValue.Equals(0f);
         currentAccel = humanCore.isGrounded ? acceleration : acceleration * airStrafeModifier;
         currentRetard = humanCore.isGrounded ? retardation : retardation * airStrafeModifier;
-        dMoveSpeed = ChangeSpeedInDirection(isInput, moveValue, currentAccel, currentRetard);
+        ChangeSpeedInDirection(isInput, moveValue, currentAccel, currentRetard, ref moveSpeed);
         
         //Clamps movespeed in order to not exceed the max speed, or fall below 0
-        dMoveSpeed = Mathf.Clamp(
-            dMoveSpeed, -Math.Abs(rigidBody.velocity.x), maxMoveSpeed - Math.Abs(rigidBody.velocity.x));
+        moveSpeed = Mathf.Clamp(moveSpeed, 0, maxMoveSpeed);
 
         //Calculates and updates position
-        //transform.position += new Vector3(
-          //  moveDirection * moveSpeed * Time.fixedDeltaTime, 0, 0);
-
-        Debug.Log("X velocity: " + Math.Round(rigidBody.velocity.x * 10) / 10 +
-                  "\nMoveDirection: " + moveDirection +
-                  ", MoveValue: " + moveValue);
-                  */
-        float MoveSpeedY = rigidBody.velocity.y;
-        rigidBody.velocity = new Vector2( maxMoveSpeed * moveValue, MoveSpeedY);
+        
+        rigidBody.velocity = new Vector2(
+            moveDirection * moveSpeed, yVelocity);
     }
     
     private void ChangeMoveDirectionIfStill()
     {
-        if (rigidBody.velocity.x.Equals(0f))
-        {
+        if (moveSpeed.Equals(0f)) 
             moveDirection = moveValue;
-            Debug.Log("Changed Direction");
-        }
     }
     
-    private float ChangeSpeedInDirection(bool isInput, float axisValue, float curAccel, float curRetard)
+    private void ChangeSpeedInDirection(bool isInput, float axisValue, float curAccel, float curRetard, ref float speed)
     {
-        return isInput && moveDirection.Equals(axisValue)
+        speed += isInput && moveDirection.Equals(axisValue)
             ? curAccel * Time.fixedDeltaTime
             : curRetard * Time.fixedDeltaTime;
     }
@@ -85,8 +80,10 @@ public class HumanMovement : MonoBehaviour
     {
         if (humanCore.isGrounded)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(
-                0, jumpForce);
+            //GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpForce);
+            
+            rigidBody.velocity = new Vector2(
+                xVelocity, yVelocity + jumpForce);
         }
     }
 

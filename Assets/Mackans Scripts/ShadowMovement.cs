@@ -12,6 +12,12 @@ public class ShadowMovement : MonoBehaviour
     [SerializeField] private float tiltInDegrees = 20f;
     private float moveSpeedX, moveSpeedY, moveDirectionX, moveDirectionY;
     private Vector2 moveVector;
+    private Rigidbody2D rigidBody;
+    
+    private void Start()
+    {
+        rigidBody = GetComponent<Rigidbody2D>();
+    }
 
     // The FixedUpdate method is a physics based update, which movement should be part of
     private void FixedUpdate()
@@ -22,10 +28,17 @@ public class ShadowMovement : MonoBehaviour
     //Method which calculates current movement
     private void MoveAction()
     {
+        float xVelocity = rigidBody.velocity.x;
+        float yVelocity = rigidBody.velocity.y;
+        
+        //
+        moveSpeedX = Mathf.Abs(xVelocity);
+        moveSpeedY = Mathf.Abs(yVelocity);
+        
         //Changes movement direction if speed is zero, to allow for retardation in previous movement
         ChangeMoveDirectionIfStill(moveSpeedX, ref moveDirectionX, 'x');
         ChangeMoveDirectionIfStill(moveSpeedY, ref moveDirectionY, 'y');
-
+        
         //Increases or decreases current movement speed based on user input
         bool isXInput = !moveVector.x.Equals(0);
         bool isYInput = !moveVector.y.Equals(0);
@@ -40,10 +53,16 @@ public class ShadowMovement : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, 
             tiltInDegrees * (moveSpeedX / maxMoveSpeed) * -moveDirectionX));
 
+        /*
         //Calculates and updates position
         transform.position += new Vector3(
             moveDirectionX * moveSpeedX * Time.fixedDeltaTime, 
             moveDirectionY * moveSpeedY * Time.fixedDeltaTime, 0);
+        */
+
+        rigidBody.velocity = new Vector2(
+            moveDirectionX * moveSpeedX, 
+            moveDirectionY * moveSpeedY);
     }
 
     private void ChangeMoveDirectionIfStill(float speed, ref float dir, char axis)
