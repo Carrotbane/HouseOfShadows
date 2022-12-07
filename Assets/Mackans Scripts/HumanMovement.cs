@@ -14,10 +14,12 @@ public class HumanMovement : MonoBehaviour
     private float acceleration, retardation, moveSpeed, moveDirection, moveValue, currentAccel, currentRetard;
     private bool isJumping, isCrouching, crouchDone;
     private HumanCore humanCore;
+    private Rigidbody2D rigidBody;
 
     private void Start()
     {
         humanCore = GetComponent<HumanCore>();
+        rigidBody = GetComponent<Rigidbody2D>();
         acceleration = maxMoveSpeed * accelMod;
         retardation = maxMoveSpeed * retardMod;
     }
@@ -37,32 +39,44 @@ public class HumanMovement : MonoBehaviour
     //Method which calculates current movement
     private void MoveAction()
     {
-        //Changes movement direction if speed is zero, to allow for deacceleration in previous movement
+        /*
+        //Changes movement direction only if speed is zero, to allow for deacceleration in previous movement
         ChangeMoveDirectionIfStill();
         
         //Increases or decreases current movement speed based on user input
         bool isInput = !moveValue.Equals(0f);
         currentAccel = humanCore.isGrounded ? acceleration : acceleration * airStrafeModifier;
         currentRetard = humanCore.isGrounded ? retardation : retardation * airStrafeModifier;
-        ChangeSpeedInDirection(isInput, moveValue, currentAccel, currentRetard, ref moveSpeed);
+        dMoveSpeed = ChangeSpeedInDirection(isInput, moveValue, currentAccel, currentRetard);
         
         //Clamps movespeed in order to not exceed the max speed, or fall below 0
-        moveSpeed = Mathf.Clamp(moveSpeed, 0, maxMoveSpeed);
+        dMoveSpeed = Mathf.Clamp(
+            dMoveSpeed, -Math.Abs(rigidBody.velocity.x), maxMoveSpeed - Math.Abs(rigidBody.velocity.x));
 
         //Calculates and updates position
-        transform.position += new Vector3(
-            moveDirection * moveSpeed * Time.fixedDeltaTime, 0, 0);
+        //transform.position += new Vector3(
+          //  moveDirection * moveSpeed * Time.fixedDeltaTime, 0, 0);
+
+        Debug.Log("X velocity: " + Math.Round(rigidBody.velocity.x * 10) / 10 +
+                  "\nMoveDirection: " + moveDirection +
+                  ", MoveValue: " + moveValue);
+                  */
+        float MoveSpeedY = rigidBody.velocity.y;
+        rigidBody.velocity = new Vector2( maxMoveSpeed * moveValue, MoveSpeedY);
     }
     
     private void ChangeMoveDirectionIfStill()
     {
-        if (moveSpeed.Equals(0f)) 
+        if (rigidBody.velocity.x.Equals(0f))
+        {
             moveDirection = moveValue;
+            Debug.Log("Changed Direction");
+        }
     }
     
-    private void ChangeSpeedInDirection(bool isInput, float axisValue, float curAccel, float curRetard, ref float speed)
+    private float ChangeSpeedInDirection(bool isInput, float axisValue, float curAccel, float curRetard)
     {
-        speed += isInput && moveDirection.Equals(axisValue)
+        return isInput && moveDirection.Equals(axisValue)
             ? curAccel * Time.fixedDeltaTime
             : curRetard * Time.fixedDeltaTime;
     }

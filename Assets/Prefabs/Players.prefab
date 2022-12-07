@@ -264,7 +264,19 @@ MonoBehaviour:
     m_ActionId: 40b561fa-42ae-498a-b56b-9119a294ba9f
     m_ActionName: Player/S_Move[/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ShadowCore, Assembly-CSharp
+        m_MethodName: InteractEvent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: bdeb26a6-eb0b-41ad-8626-45b57dc266ba
     m_ActionName: Player/S_Interact[/Keyboard/o]
   m_NeverAutoSwitchControlSchemes: 0
@@ -392,7 +404,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2570862665150296972}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6d0a78f8b2ecedd4c8434df74ad75e26, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -465,7 +477,7 @@ Transform:
   m_GameObject: {fileID: 6919995850944518655}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.374, z: 0}
-  m_LocalScale: {x: 1, y: 0.15552, z: 1}
+  m_LocalScale: {x: 1.33, y: 0.15552, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6919995852668980905}
@@ -576,7 +588,7 @@ GameObject:
   - component: {fileID: 529834198775564611}
   - component: {fileID: 1826731044338459381}
   m_Layer: 6
-  m_Name: Player
+  m_Name: Human
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -666,7 +678,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6d0a78f8b2ecedd4c8434df74ad75e26, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -680,11 +692,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 6919995852668980910}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6d0a78f8b2ecedd4c8434df74ad75e26, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.05381751}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -695,7 +707,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.33, y: 2.72}
+  m_Size: {x: 1.1409281, y: 2.6123648}
   m_EdgeRadius: 0
 --- !u!114 &529834198775564611
 MonoBehaviour:
@@ -722,8 +734,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92af55f9b19f15b48b446d6e2b9762b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMoveSpeed: 7
-  jumpForce: 12
+  maxMoveSpeed: 5
+  jumpForce: 14
   accelMod: 5
   retardMod: -8
   airStrafeModifier: 0.5
