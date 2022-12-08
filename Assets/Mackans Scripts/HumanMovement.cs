@@ -85,7 +85,7 @@ public class HumanMovement : MonoBehaviour
             //GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpForce);
             
             rigidBody.velocity = new Vector2(
-                xVelocity, yVelocity + jumpForce);
+                xVelocity, jumpForce);
         }
     }
 

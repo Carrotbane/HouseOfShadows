@@ -19,11 +19,14 @@ public class HumanCore : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
+        humanMovement = GetComponent<HumanMovement>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
-        animator.SetFloat("moveSpeed", rigidBody.velocity.x);
+        float xVelocity = rigidBody.velocity.x;
+        animator.SetFloat("moveSpeed", xVelocity);
         animator.SetBool("isCrouching", humanMovement.isCrouching);
         animator.SetBool("isJumping", !isGrounded);
         animator.SetBool("isFalling", 0 < rigidBody.velocity.y);
@@ -34,6 +37,8 @@ public class HumanCore : MonoBehaviour
             < 0 => true,
             _ => spriteRenderer.flipX
         };
+        
+        Debug.Log(xVelocity);
     }
 
     void OnTriggerEnter2D(Collider2D col)
