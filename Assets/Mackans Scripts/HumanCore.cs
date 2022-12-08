@@ -29,7 +29,7 @@ public class HumanCore : MonoBehaviour
         animator.SetFloat("moveSpeed", Mathf.Abs(xVelocity));
         animator.SetBool("isCrouching", humanMovement.isCrouching);
         animator.SetBool("isJumping", !isGrounded);
-        animator.SetBool("isFalling", 0 < rigidBody.velocity.y);
+        animator.SetBool("isFalling", 0 > rigidBody.velocity.y);
 
         spriteRenderer.flipX = rigidBody.velocity.x switch
         {
