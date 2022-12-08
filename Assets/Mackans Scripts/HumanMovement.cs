@@ -18,6 +18,7 @@ public class HumanMovement : MonoBehaviour
     private Rigidbody2D rigidBody;
 
     public bool isCrouching;
+    public bool isInput;
 
     private void Start()
     {
@@ -51,7 +52,7 @@ public class HumanMovement : MonoBehaviour
         ChangeMoveDirectionIfStill();
 
         //Increases or decreases current movement speed based on user input
-        bool isInput = !moveValue.Equals(0f);
+        isInput = !moveValue.Equals(0f);
         currentAccel = humanCore.isGrounded ? acceleration : acceleration * airStrafeModifier;
         currentRetard = humanCore.isGrounded ? retardation : retardation * airStrafeModifier;
         ChangeSpeedInDirection(isInput, moveValue, currentAccel, currentRetard, ref moveSpeed);
