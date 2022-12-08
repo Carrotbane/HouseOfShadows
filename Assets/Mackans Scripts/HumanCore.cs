@@ -31,7 +31,7 @@ public class HumanCore : MonoBehaviour
         animator.SetBool("isJumping", !isGrounded);
         animator.SetBool("isFalling", 0 > rigidBody.velocity.y);
 
-        if (humanMovement.isInput)
+        if (humanMovement.isInput && Mathf.Sign(xVelocity).Equals(humanMovement.moveValue))
         {
             spriteRenderer.flipX = rigidBody.velocity.x switch
             {

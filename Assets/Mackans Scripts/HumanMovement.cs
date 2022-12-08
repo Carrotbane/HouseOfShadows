@@ -11,14 +11,14 @@ public class HumanMovement : MonoBehaviour
     [SerializeField] private float accelMod = 4f;
     [SerializeField] private float retardMod = -6f;
     [SerializeField] private float airStrafeModifier = 0.5f;
-    private float acceleration, retardation, moveSpeed, moveDirection, moveValue, currentAccel, currentRetard;
+    private float acceleration, retardation, moveSpeed, moveDirection, currentAccel, currentRetard;
     private float xVelocity, yVelocity;
     private bool isJumping, crouchDone;
     private HumanCore humanCore;
     private Rigidbody2D rigidBody;
 
-    public bool isCrouching;
-    public bool isInput;
+    public float moveValue;
+    public bool isCrouching, isInput;
 
     private void Start()
     {
