@@ -28,10 +28,11 @@ public class ShadowMovement : MonoBehaviour
     //Method which calculates current movement
     private void MoveAction()
     {
+        //Stores velocity values
         float xVelocity = rigidBody.velocity.x;
         float yVelocity = rigidBody.velocity.y;
         
-        //
+        //Updates movespeed values according to current speed (may change due to in game collisions)
         moveSpeedX = Mathf.Abs(xVelocity);
         moveSpeedY = Mathf.Abs(yVelocity);
         
@@ -53,13 +54,7 @@ public class ShadowMovement : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, 
             tiltInDegrees * (moveSpeedX / maxMoveSpeed) * -moveDirectionX));
 
-        /*
-        //Calculates and updates position
-        transform.position += new Vector3(
-            moveDirectionX * moveSpeedX * Time.fixedDeltaTime, 
-            moveDirectionY * moveSpeedY * Time.fixedDeltaTime, 0);
-        */
-
+        //Updates velocity (live speed)
         rigidBody.velocity = new Vector2(
             moveDirectionX * moveSpeedX, 
             moveDirectionY * moveSpeedY);
