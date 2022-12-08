@@ -577,6 +577,7 @@ GameObject:
   - component: {fileID: 6919995852668980823}
   - component: {fileID: 529834198775564611}
   - component: {fileID: 1826731044338459381}
+  - component: {fileID: 4888279947288135860}
   m_Layer: 6
   m_Name: Human
   m_TagString: Untagged
@@ -729,6 +730,27 @@ MonoBehaviour:
   accelMod: 100
   retardMod: -100
   airStrafeModifier: 0.07
+  isCrouching: 0
+--- !u!95 &4888279947288135860
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6919995852668980910}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8eef8ccec97b2e445855fbb0053944d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8750817226339544615
 GameObject:
   m_ObjectHideFlags: 0
