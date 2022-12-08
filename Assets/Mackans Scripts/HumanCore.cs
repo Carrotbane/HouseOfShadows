@@ -26,7 +26,7 @@ public class HumanCore : MonoBehaviour
     private void Update()
     {
         float xVelocity = rigidBody.velocity.x;
-        animator.SetFloat("moveSpeed", xVelocity);
+        animator.SetFloat("moveSpeed", Mathf.Abs(xVelocity));
         animator.SetBool("isCrouching", humanMovement.isCrouching);
         animator.SetBool("isJumping", !isGrounded);
         animator.SetBool("isFalling", 0 < rigidBody.velocity.y);
