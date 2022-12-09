@@ -1,18 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class ShadowCore : MonoBehaviour
 {
-    public void InteractEvent(InputAction.CallbackContext context)
-    {
-        
-    }
     
-    private void InteractAction()
-    {
-        
-    }
+    private Animator animator;
+    private Rigidbody2D rigidBody;
+    private ShadowMovement humanMovement;
+    private SpriteRenderer spriteRenderer;
 }

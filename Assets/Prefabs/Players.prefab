@@ -233,8 +233,8 @@ MonoBehaviour:
     m_ActionName: Player/Crouch[/Keyboard/k,/Keyboard/s]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 529834198775564611}
-        m_TargetAssemblyTypeName: HumanCore, Assembly-CSharp
+      - m_Target: {fileID: 9138220213367281397}
+        m_TargetAssemblyTypeName: Interactor, Assembly-CSharp
         m_MethodName: InteractEvent
         m_Mode: 0
         m_Arguments:
@@ -265,8 +265,8 @@ MonoBehaviour:
     m_ActionName: Player/S_Move[/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ShadowCore, Assembly-CSharp
+      - m_Target: {fileID: 2742097443499523245}
+        m_TargetAssemblyTypeName: Interactor, Assembly-CSharp
         m_MethodName: InteractEvent
         m_Mode: 0
         m_Arguments:
@@ -295,9 +295,10 @@ GameObject:
   - component: {fileID: 4938235923427231661}
   - component: {fileID: 6870722865067997951}
   - component: {fileID: 1089532070472412292}
+  - component: {fileID: 1667841942}
   - component: {fileID: 2283985287593166010}
   - component: {fileID: 6161887210972521882}
-  - component: {fileID: 1667841942}
+  - component: {fileID: 2742097443499523245}
   m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
@@ -395,6 +396,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!70 &1667841942
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570862665150296972}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 6d0a78f8b2ecedd4c8434df74ad75e26, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 2}
+  m_Direction: 0
 --- !u!114 &2283985287593166010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,22 +440,18 @@ MonoBehaviour:
   accelMod: 2
   retardMod: -2
   tiltInDegrees: 20
---- !u!70 &1667841942
-CapsuleCollider2D:
+--- !u!114 &2742097443499523245
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2570862665150296972}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 6d0a78f8b2ecedd4c8434df74ad75e26, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
-  m_Direction: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cef0cd719e7a22a458f66b695324263f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6919995850944518655
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,9 +588,10 @@ GameObject:
   - component: {fileID: 6919995852668980906}
   - component: {fileID: 6919995852668980909}
   - component: {fileID: 6919995852668980823}
+  - component: {fileID: 4888279947288135860}
   - component: {fileID: 529834198775564611}
   - component: {fileID: 1826731044338459381}
-  - component: {fileID: 4888279947288135860}
+  - component: {fileID: 9138220213367281397}
   m_Layer: 6
   m_Name: Human
   m_TagString: Untagged
@@ -700,6 +714,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1409281, y: 2.6123648}
   m_EdgeRadius: 0
+--- !u!95 &4888279947288135860
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6919995852668980910}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8eef8ccec97b2e445855fbb0053944d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &529834198775564611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -730,27 +764,21 @@ MonoBehaviour:
   accelMod: 100
   retardMod: -100
   airStrafeModifier: 0.07
+  moveValue: 0
   isCrouching: 0
---- !u!95 &4888279947288135860
-Animator:
-  serializedVersion: 4
+  isInput: 0
+--- !u!114 &9138220213367281397
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6919995852668980910}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8eef8ccec97b2e445855fbb0053944d1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cef0cd719e7a22a458f66b695324263f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8750817226339544615
 GameObject:
   m_ObjectHideFlags: 0
