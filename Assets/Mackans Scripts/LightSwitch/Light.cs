@@ -6,12 +6,12 @@ public class Light : MonoBehaviour
 {
     public bool IsLightOn = true;
     private PolygonCollider2D lightCollider;
-    private MeshRenderer lightRenderer;
+    private SpriteRenderer lightRenderer;
 
     void Start()
     {
         lightCollider = GetComponent<PolygonCollider2D>();
-        lightRenderer = GetComponent<MeshRenderer>();
+        lightRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void Toggle()
