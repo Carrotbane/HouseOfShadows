@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 2283985287593166010}
   - component: {fileID: 6161887210972521882}
   - component: {fileID: 2742097443499523245}
+  - component: {fileID: 8650213324456917134}
   m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
@@ -440,6 +441,9 @@ MonoBehaviour:
   accelMod: 2
   retardMod: -2
   tiltInDegrees: 20
+  moveVector: {x: 0, y: 0}
+  isXInput: 0
+  isYInput: 0
 --- !u!114 &2742097443499523245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,6 +456,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef0cd719e7a22a458f66b695324263f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &8650213324456917134
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570862665150296972}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2b23cb517e62a504ba7c45f65a854519, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6919995850944518655
 GameObject:
   m_ObjectHideFlags: 0
