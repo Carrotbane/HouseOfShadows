@@ -32,7 +32,8 @@ public class InventorySystem : MonoBehaviour
         }
         else
         {
-            InventoryItem newItem = new InventoryItem(referenceData);
+            InventoryItem newItem = gameObject.AddComponent<InventoryItem>();
+            newItem.Create(referenceData);
             inventory.Add(newItem);
             itemDictionary.Add(referenceData, newItem);
         }
