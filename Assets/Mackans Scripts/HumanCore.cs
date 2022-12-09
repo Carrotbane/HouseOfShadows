@@ -34,7 +34,5 @@ public class HumanCore : MonoBehaviour
                 _ => spriteRenderer.flipX
             }; 
         }
-        
-        Debug.Log(xVelocity);
     }
 }

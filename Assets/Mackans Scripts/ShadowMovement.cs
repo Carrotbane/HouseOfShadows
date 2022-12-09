@@ -11,8 +11,10 @@ public class ShadowMovement : MonoBehaviour
     [SerializeField] private float retardMod = -3f;
     [SerializeField] private float tiltInDegrees = 20f;
     private float moveSpeedX, moveSpeedY, moveDirectionX, moveDirectionY;
-    private Vector2 moveVector;
     private Rigidbody2D rigidBody;
+    
+    public Vector2 moveVector;
+    public bool isXInput, isYInput;
     
     private void Start()
     {
@@ -41,8 +43,8 @@ public class ShadowMovement : MonoBehaviour
         ChangeMoveDirectionIfStill(moveSpeedY, ref moveDirectionY, 'y');
         
         //Increases or decreases current movement speed based on user input
-        bool isXInput = !moveVector.x.Equals(0);
-        bool isYInput = !moveVector.y.Equals(0);
+        isXInput = !moveVector.x.Equals(0);
+        isYInput = !moveVector.y.Equals(0);
         ChangeSpeedInDirection(isXInput, moveDirectionX, 'x', ref moveSpeedX);
         ChangeSpeedInDirection(isYInput, moveDirectionY, 'y', ref moveSpeedY);
         
