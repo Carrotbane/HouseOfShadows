@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemObject : MonoBehaviour
@@ -12,10 +9,13 @@ public class ItemObject : MonoBehaviour
     {
         inventorySystem = GameObject.Find("Inventory").GetComponent<InventorySystem>();
     }
-
-    public void OnHandlePickupItem()
+    
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        inventorySystem.Add(referenceItem);
-        Destroy(gameObject);
+        if (col.name.Equals("Human"))
+        {
+            inventorySystem.Add(referenceItem);
+            Destroy(gameObject);
+        }
     }
 }
