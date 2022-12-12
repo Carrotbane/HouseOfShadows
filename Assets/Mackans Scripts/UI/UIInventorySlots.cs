@@ -6,17 +6,21 @@ using UnityEngine;
 
 public class UIInventorySlots : MonoBehaviour
 {
-    private Sprite icon;
+    [SerializeField]
+    private Image icon;
 
+    [SerializeField]
     private TextMeshProUGUI textLabel;
 
+    [SerializeField]
     private GameObject stackObj;
 
+    [SerializeField]
     private TextMeshProUGUI stackLabel;
 
     public void Set(InventoryItem item)
     {
-        icon = item.data.icon;
+        icon = gameObject.GetComponentInChildren<Image>();
         textLabel.text = item.data.displayName;
         stackLabel.text = item.stackSize.ToString();
 

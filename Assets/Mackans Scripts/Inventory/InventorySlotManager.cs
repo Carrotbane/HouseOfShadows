@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryManager : MonoBehaviour
+public class InventorySlotManager : MonoBehaviour
 {
     private InventorySystem inventorySystem;
 
@@ -11,7 +11,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        inventorySystem = gameObject.GetComponent<InventorySystem>();
+        inventorySystem = GameObject.Find("Inventory").GetComponent<InventorySystem>();
     }
 
     public void ItemPickup()
@@ -30,6 +30,11 @@ public class InventoryManager : MonoBehaviour
 
     private void AddInventorySlot(InventoryItem item)
     {
+        GameObject obj = Instantiate(itemSlotPrefab, transform, false);
+
+        //Debug.Log(obj.GetComponent<UIInventorySlots>());
         
+        UIInventorySlots slot = obj.GetComponent<UIInventorySlots>();
+        slot.Set(item);
     }
 }
