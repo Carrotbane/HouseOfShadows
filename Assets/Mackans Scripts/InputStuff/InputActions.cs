@@ -130,7 +130,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1ee3ec60-38ed-495d-b3f5-9cb1d3eee2d0"",
-                    ""path"": ""<Keyboard>/o"",
+                    ""path"": ""<Keyboard>/rightCtrl"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Shadow"",

@@ -8,11 +8,6 @@ public class Switch : MonoBehaviour
 
     public void Use()
     {
-        Toggle();
-    }
-    
-    private void Toggle()
-    {
         Target.SendMessage("Toggle");
     }
 }

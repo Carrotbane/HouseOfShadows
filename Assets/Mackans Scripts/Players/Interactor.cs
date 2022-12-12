@@ -19,9 +19,12 @@ public class Interactor : MonoBehaviour
     
     private void InteractAction()
     {
-        foreach (var col in InColliders.Where(col => col.gameObject.CompareTag("Switch")))
+        if (InColliders != null)
         {
-            col.SendMessage("Use", SendMessageOptions.DontRequireReceiver);
+            foreach (var col in InColliders.Where(col => col != null && col.gameObject.CompareTag("Switch")))
+            {
+                col.SendMessage("Use", SendMessageOptions.DontRequireReceiver);
+            }
         }
     }
     

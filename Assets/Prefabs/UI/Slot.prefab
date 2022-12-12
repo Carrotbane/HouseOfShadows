@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 6043873030852954684}
   - component: {fileID: 2615259066703526375}
   m_Layer: 5
-  m_Name: Your mom
+  m_Name: Text panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 7964594139030624380}
   - component: {fileID: 3153438315295735860}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
