@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5604533991675710085}
   - component: {fileID: 1312229447}
   m_Layer: 0
-  m_Name: Key
+  m_Name: SilverKey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a76b74f0ce942834693fd12af734fc3b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c335b60125d30dc43a3e5410734ee99d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,4 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8a57c9d63f7d444978cb5805a40699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  referenceItem: {fileID: 11400000, guid: 74d7cddaefd0c8c49bfeac9396a6db07, type: 2}
+  referenceItem: {fileID: 11400000, guid: 86868374032fc2248b5fb026d693db74, type: 2}

@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using UnityEngine;
 
 public class UIInventorySlots : MonoBehaviour
 {
     [SerializeField]
-    private Image icon;
+    private UnityEngine.UI.Image icon;
 
     [SerializeField]
     private TextMeshProUGUI textLabel;
@@ -20,7 +19,7 @@ public class UIInventorySlots : MonoBehaviour
 
     public void Set(InventoryItem item)
     {
-        icon = gameObject.GetComponentInChildren<Image>();
+        icon.sprite = item.data.icon;
         textLabel.text = item.data.displayName;
         stackLabel.text = item.stackSize.ToString();
 
