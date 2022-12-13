@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class InventorySystem : MonoBehaviour
 {
+    private InventorySlotManager _iSlotManager;
     private Dictionary<InventoryItemData, InventoryItem> itemDictionary;
     public List<InventoryItem> inventory { get; private set; }
 
@@ -13,6 +14,7 @@ public class InventorySystem : MonoBehaviour
     {
         inventory = new List<InventoryItem>();
         itemDictionary = new Dictionary<InventoryItemData, InventoryItem>();
+        _iSlotManager = GameObject.Find("InventoryBar").GetComponent<InventorySlotManager>();
     }
 
     public InventoryItem Get(InventoryItemData referenceData)
@@ -37,10 +39,12 @@ public class InventorySystem : MonoBehaviour
             inventory.Add(newItem);
             itemDictionary.Add(referenceData, newItem);
         }
+        _iSlotManager.DrawInventory();
     }
 
     public void Remove(InventoryItemData referenceData)
     {
+        Debug.Log("Remove item inventory");
         if (itemDictionary.TryGetValue(referenceData, out InventoryItem value))
         {
             value.RemoveFromStack();
@@ -51,5 +55,6 @@ public class InventorySystem : MonoBehaviour
                 itemDictionary.Remove(referenceData);
             }
         }
+        _iSlotManager.DrawInventory();
     }
 }

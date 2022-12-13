@@ -14,16 +14,11 @@ public class InventorySlotManager : MonoBehaviour
         inventorySystem = GameObject.Find("Inventory").GetComponent<InventorySystem>();
     }
 
-    public void ItemPickup()
+    public void DrawInventory()
     {
         foreach (Transform t in transform)
             Destroy(t.gameObject);
         
-        DrawInventory();
-    }
-
-    public void DrawInventory()
-    {
         foreach (InventoryItem item in inventorySystem.inventory)
             AddInventorySlot(item);
     }

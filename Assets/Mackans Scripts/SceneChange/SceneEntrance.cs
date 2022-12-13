@@ -9,17 +9,13 @@ public class SceneEntrance : MonoBehaviour
     
     void Start()
     {
-        
         if (PlayerPrefs.GetString("LastExitName") == lastExitName)
         {
-            DontDestroyOnSceneChange.instance.transform.GetChild(0).position = transform.position;
-            DontDestroyOnSceneChange.instance.transform.GetChild(1).position = transform.position;
+            Vector3 newPosition = transform.position;
+            Transform playersTransform = GameObject.Find("Players").transform;
+            
+            playersTransform.GetChild(0).position = newPosition;
+            playersTransform.GetChild(1).position = newPosition;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

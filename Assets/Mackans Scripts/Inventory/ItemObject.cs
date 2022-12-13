@@ -17,7 +17,6 @@ public class ItemObject : MonoBehaviour
         if (col.name.Equals("Human"))
         {
             inventorySystem.Add(referenceItem);
-            inventorySlotManager.ItemPickup();
             Destroy(gameObject);
         }
     }
