@@ -960,16 +960,16 @@ MonoBehaviour:
   targetVolume: 0.374
   fadeSpeed: 1
   clipsToPlay:
-  - {fileID: 8300000, guid: d8b94ea848deeb24b8e33bc172f218a9, type: 3}
-  - {fileID: 8300000, guid: 30763e7fcea6d694aa8f8f11478269a0, type: 3}
-  - {fileID: 8300000, guid: 4c31b14161c378c4ab7a4eb058b7e457, type: 3}
-  - {fileID: 8300000, guid: b0dea1ad65c654b4597a16ff9712f8f3, type: 3}
+  - {fileID: 8300000, guid: 33bd94710b898654681a49ccd44888b5, type: 3}
+  - {fileID: 8300000, guid: 1346245eeb5faa44f922a50f6d04ed1c, type: 3}
+  - {fileID: 8300000, guid: 6d7be5ede34211640a034b40eb78f802, type: 3}
+  - {fileID: 8300000, guid: 2a6b5dba351c9ec4897050b931b0204f, type: 3}
   minTime: 0
   maxTime: 0
   minVolume: 1
   maxVolume: 1
-  minPitch: 2.354
-  maxPitch: 2.69
+  minPitch: 2.104
+  maxPitch: 2.885
 --- !u!114 &197658334678523628
 MonoBehaviour:
   m_ObjectHideFlags: 0
