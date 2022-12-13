@@ -531,7 +531,9 @@ GameObject:
   - component: {fileID: 1826731044338459381}
   - component: {fileID: 9138220213367281397}
   - component: {fileID: 673315457}
-  - component: {fileID: 673315456}
+  - component: {fileID: 797841271004868057}
+  - component: {fileID: 9132117046650024753}
+  - component: {fileID: 7731989321487335962}
   m_Layer: 6
   m_Name: Human
   m_TagString: Human
@@ -815,7 +817,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &673315456
+--- !u!114 &797841271004868057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -828,13 +830,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playOnStart: 0
-  oneShot: 1
+  oneShot: 0
   startDelay: 0
   playWithFade: 0
   targetVolume: 1
   fadeSpeed: 1
-  clipsToPlay:
-  - {fileID: 8300000, guid: a12bcec9d7456064b9fef3a9fed37f3b, type: 3}
+  clipsToPlay: []
+  minTime: 0
+  maxTime: 0
+  minVolume: 1
+  maxVolume: 1
+  minPitch: 1
+  maxPitch: 1
+--- !u!114 &9132117046650024753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6919995852668980910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8b4d9a43f0f9241b01357efad86428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnStart: 0
+  oneShot: 0
+  startDelay: 0
+  playWithFade: 0
+  targetVolume: 1
+  fadeSpeed: 1
+  clipsToPlay: []
+  minTime: 0
+  maxTime: 0
+  minVolume: 1
+  maxVolume: 1
+  minPitch: 1
+  maxPitch: 1
+--- !u!114 &7731989321487335962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6919995852668980910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8b4d9a43f0f9241b01357efad86428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnStart: 0
+  oneShot: 0
+  startDelay: 0
+  playWithFade: 0
+  targetVolume: 1
+  fadeSpeed: 1
+  clipsToPlay: []
   minTime: 0
   maxTime: 0
   minVolume: 1
