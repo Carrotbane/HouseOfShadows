@@ -9,10 +9,16 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/Amanda 1.unity
-    guid: 94346a9d353ede241b13c785aa076c06
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/First main scene.unity
     guid: a341d25b0ea61b248a8336379d9773eb
+  - enabled: 1
+    path: Assets/Scenes/Mackans/HELLOHELLO.unity
+    guid: 0ed2fc66033e7de47b5f0859b6c143ba
+  - enabled: 1
+    path: Assets/Scenes/Mackans/LevelExitTest.unity
+    guid: 9455c11bb055dd94e8371dec8182af98
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: d81fde8c3ca173847bdb5e789c6be2de, type: 2}
