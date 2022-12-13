@@ -38,6 +38,39 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-6258328689448873454
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 4271d0778f85aaf428eb2e01b6051ba6
+  m_EffectName: Attenuation
+  m_MixLevel: bfb4d372d2ac8eb4a967a296d612b9e0
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &-5118882547085951263
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shadow
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: d1daaf7b5508ec147a0482b2a9cc2fb2
+  m_Children: []
+  m_Volume: 66e5412b561505b4eae44465041946f9
+  m_Pitch: b59659fb470274441917c4b4f0b4bd76
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -6258328689448873454}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &-2043953032789202363
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -74,6 +107,7 @@ AudioMixerController:
     - 5de8d526eb1b7804f882725873f5cf26
     - c21193cbb8ac6bc4bbfb3631e5142aa9
     - 61be9e25ef3cb9945a3e74394fc29dba
+    - d1daaf7b5508ec147a0482b2a9cc2fb2
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -90,6 +124,7 @@ AudioMixerGroupController:
   - {fileID: 2839665716589987148}
   - {fileID: -8268917551187106217}
   - {fileID: -8065403970367247356}
+  - {fileID: -5118882547085951263}
   m_Volume: eac042c852719814b813092647c2e690
   m_Pitch: ed70de1e12525074088dfcfb23121f0e
   m_Send: 00000000000000000000000000000000
