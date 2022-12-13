@@ -532,8 +532,8 @@ GameObject:
   - component: {fileID: 9138220213367281397}
   - component: {fileID: 673315457}
   - component: {fileID: 797841271004868057}
-  - component: {fileID: 9132117046650024753}
-  - component: {fileID: 7731989321487335962}
+  - component: {fileID: 197658334678523628}
+  - component: {fileID: 6492152375903832945}
   m_Layer: 6
   m_Name: Human
   m_TagString: Human
@@ -835,14 +835,18 @@ MonoBehaviour:
   playWithFade: 0
   targetVolume: 1
   fadeSpeed: 1
-  clipsToPlay: []
+  clipsToPlay:
+  - {fileID: 8300000, guid: d8b94ea848deeb24b8e33bc172f218a9, type: 3}
+  - {fileID: 8300000, guid: 30763e7fcea6d694aa8f8f11478269a0, type: 3}
+  - {fileID: 8300000, guid: 4c31b14161c378c4ab7a4eb058b7e457, type: 3}
+  - {fileID: 8300000, guid: b0dea1ad65c654b4597a16ff9712f8f3, type: 3}
   minTime: 0
   maxTime: 0
   minVolume: 1
   maxVolume: 1
   minPitch: 1
   maxPitch: 1
---- !u!114 &9132117046650024753
+--- !u!114 &197658334678523628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -851,7 +855,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6919995852668980910}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b8b4d9a43f0f9241b01357efad86428, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f406f5e71a19254e8e3339efe65b8b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playOnStart: 0
@@ -860,14 +864,15 @@ MonoBehaviour:
   playWithFade: 0
   targetVolume: 1
   fadeSpeed: 1
-  clipsToPlay: []
+  clipsToPlay:
+  - {fileID: 8300000, guid: a12bcec9d7456064b9fef3a9fed37f3b, type: 3}
   minTime: 0
   maxTime: 0
   minVolume: 1
   maxVolume: 1
   minPitch: 1
   maxPitch: 1
---- !u!114 &7731989321487335962
+--- !u!114 &6492152375903832945
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -876,7 +881,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6919995852668980910}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b8b4d9a43f0f9241b01357efad86428, type: 3}
+  m_Script: {fileID: 11500000, guid: c744b837506015c49a0aaa103f584587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playOnStart: 0
@@ -885,7 +890,10 @@ MonoBehaviour:
   playWithFade: 0
   targetVolume: 1
   fadeSpeed: 1
-  clipsToPlay: []
+  clipsToPlay:
+  - {fileID: 8300000, guid: 784465c3baacbd946bd0a0f9052beefc, type: 3}
+  - {fileID: 8300000, guid: 67701549272da8e45aaa705489494d33, type: 3}
+  - {fileID: 8300000, guid: b0654e73470df484ea8041b3206d45e6, type: 3}
   minTime: 0
   maxTime: 0
   minVolume: 1
