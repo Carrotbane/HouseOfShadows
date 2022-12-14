@@ -65,11 +65,8 @@ public class AudioPlayLand : MonoBehaviour
             if (playingAudioFunction == false || oneShot == true)
             {
                 
-                Debug.Log("Started AudioFunction");
                 StartCoroutine("RandomClip");
             }
-            else
-                Debug.Log("Audio Function already playing");
         }
     }
 
@@ -82,7 +79,6 @@ public class AudioPlayLand : MonoBehaviour
         {
             playingAudioFunction = false;
             source.Stop();
-            Debug.Log("Stopped AudioFunction");
         }
         firstPlay = false;
     }
@@ -95,7 +91,6 @@ public class AudioPlayLand : MonoBehaviour
             yield return null;
         }
         source.Stop();
-        Debug.Log("Stopped AudioFunction");
         playingAudioFunction = false;
     }
 
@@ -137,7 +132,6 @@ public class AudioPlayLand : MonoBehaviour
                 if(playWithFade)
                     source.volume = 0f;
                 firstPlay = false;
-                Debug.Log("Stopped AudioFunction");
             }
         }
         else
@@ -155,7 +149,6 @@ public class AudioPlayLand : MonoBehaviour
             else
             {
                 firstPlay = false;
-                Debug.Log("Stopped AudioFunction else");
             }
         }
     }
@@ -173,12 +166,10 @@ public class AudioPlayLand : MonoBehaviour
             int clip = Random.Range(0, clipsToPlay.Length);
             if (clip == tempClip)
             {
-                Debug.Log("Tried to play the clip - Restarting");
                 StartCoroutine("RandomClip");
             }
             else
             {
-                Debug.Log("Picked a new clip - Success");
                 source.clip = clipsToPlay[clip];
                 tempClip = clip;
                 StartCoroutine("AudioFunction");

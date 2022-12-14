@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneExit : MonoBehaviour
 {
-    public string sceneToLoad;
+    public int sceneToLoad;
     public string exitName;
     public bool requireItem;
     public bool consumeItem;

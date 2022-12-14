@@ -2,11 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Switch : MonoBehaviour
 {
     [SerializeField]
     private GameObject Target;
+    
+    [SerializeField] 
+    private bool holdDown;
     
     [SerializeField]
     private Sprite switchOnSprite;
@@ -17,7 +21,7 @@ public class Switch : MonoBehaviour
     private SpriteRenderer _renderer;
     private ObjectsManager _objManager;
 
-    public AudioPlay audioPlay;
+    //public AudioPlay audioPlay;
 
     private void Start()
     {
@@ -25,11 +29,17 @@ public class Switch : MonoBehaviour
         _objManager = Target.GetComponent<ObjectsManager>();    
     }
 
-    public void Use()
+    private void StateChange()
     {
         Target.SendMessage("Toggle");
+        //audioPlay.PlayAudio();
+        
         _renderer.sprite = _objManager.state ? 
             switchOnSprite : switchOffSprite ;
-        audioPlay.PlayAudio();
+    }
+
+    public void Use()
+    {
+        StateChange();
     }
 }

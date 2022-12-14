@@ -3835,8 +3835,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 8293502588226075250}
+  holdDown: 0
   switchOnSprite: {fileID: 21300000, guid: dbc743fc73d43ba4fae4c92ec4707b0c, type: 3}
   switchOffSprite: {fileID: 21300000, guid: 8de1bf1bed815f64ab2d3a35c6cb1ed6, type: 3}
+  audioPlay: {fileID: 0}
 --- !u!61 &1662111715
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4337,7 +4339,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803555405}
   m_LocalRotation: {x: -0, y: 0.0048583667, z: -0, w: 0.99998826}
-  m_LocalPosition: {x: -5.1, y: 1.21, z: 0.28}
+  m_LocalPosition: {x: -5.27, y: 0.59, z: 0.28}
   m_LocalScale: {x: 0.39999995, y: 0.39999998, z: 0.39999995}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4357,8 +4359,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 8293502588226075250}
+  holdDown: 1
   switchOnSprite: {fileID: 21300000, guid: dbc743fc73d43ba4fae4c92ec4707b0c, type: 3}
   switchOffSprite: {fileID: 21300000, guid: 8de1bf1bed815f64ab2d3a35c6cb1ed6, type: 3}
+  audioPlay: {fileID: 0}
 --- !u!61 &1803555408
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5537,8 +5541,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 8293502588226075250}
+  holdDown: 0
   switchOnSprite: {fileID: 21300000, guid: dbc743fc73d43ba4fae4c92ec4707b0c, type: 3}
   switchOffSprite: {fileID: 21300000, guid: 8de1bf1bed815f64ab2d3a35c6cb1ed6, type: 3}
+  audioPlay: {fileID: 0}
 --- !u!4 &3167420364395122799
 Transform:
   m_ObjectHideFlags: 0
@@ -5582,8 +5588,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 7627506350237674580}
+  holdDown: 0
   switchOnSprite: {fileID: 0}
   switchOffSprite: {fileID: 0}
+  audioPlay: {fileID: 0}
 --- !u!61 &4075457962452268237
 BoxCollider2D:
   m_ObjectHideFlags: 0

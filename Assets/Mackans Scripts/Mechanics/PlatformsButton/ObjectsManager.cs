@@ -14,7 +14,6 @@ public class ObjectsManager : MonoBehaviour
             platformList.Add(child);
     }
 
-    // Update is called once per frame
     public void Toggle()
     {
         state = !state;

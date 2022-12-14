@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class Interactor : MonoBehaviour
 {
     private List<Collider2D> InColliders = new ();
+    private bool isPressed;
     
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -14,23 +15,41 @@ public class Interactor : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col)
     {
-        InColliders.Remove(col);
-    }
-    
-    private void InteractAction()
-    {
-        if (InColliders != null)
+        if (isPressed)
         {
-            foreach (var col in InColliders.Where(col => col != null && col.gameObject.CompareTag("Switch")))
+            isPressed = false;
+            if (col.TryGetComponent(out Interactable script))
             {
-                col.SendMessage("Use", SendMessageOptions.DontRequireReceiver);
+                if (script._holdDown)
+                {
+                    script.InteractLeave();
+                }
             }
         }
+        
+        InColliders.Remove(col);
     }
     
     public void InteractEvent(InputAction.CallbackContext context)
     {
-        if (context.action.WasPerformedThisFrame())
-            InteractAction();
+        if (!isPressed && context.canceled)
+            return;
+
+        if (context.canceled)
+            isPressed = false;
+
+        if (InColliders != null)
+        {
+            foreach (var col in InColliders.Where(col => col != null)) // && col.gameObject.CompareTag("Switch")
+            {
+                if (col.TryGetComponent(out Interactable script))
+                {
+                    script.Interact(context);
+                    
+                    if (context.performed)
+                        isPressed = true;
+                }
+            }
+        }
     }
 }
