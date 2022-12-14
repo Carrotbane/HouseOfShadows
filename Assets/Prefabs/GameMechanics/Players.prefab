@@ -858,7 +858,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 3
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -968,8 +968,8 @@ MonoBehaviour:
   maxTime: 0
   minVolume: 1
   maxVolume: 1
-  minPitch: 2.104
-  maxPitch: 2.885
+  minPitch: 2.657
+  maxPitch: 3
 --- !u!114 &197658334678523628
 MonoBehaviour:
   m_ObjectHideFlags: 0
