@@ -4,25 +4,20 @@ using UnityEngine;
 
 public class DontDestroyOnSceneChange : MonoBehaviour
 {
-    public static DontDestroyOnSceneChange instance;
-    
     void Start()
     {
-        if (instance != null)
+        for (int i = 0; i < FindObjectsOfType<DontDestroyOnSceneChange>().Length; i++)
         {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-        }
-        
-        DontDestroyOnLoad(gameObject);
-    }
+            if (FindObjectsOfType<DontDestroyOnSceneChange>()[i] != this)
+            {
+                if (FindObjectsOfType<DontDestroyOnSceneChange>()[i].name == gameObject.name)
+                {
+                    Destroy(gameObject);
+                }
+            }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
+
+        DontDestroyOnLoad(gameObject);
     }
 }

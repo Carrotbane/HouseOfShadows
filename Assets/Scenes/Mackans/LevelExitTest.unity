@@ -415,6 +415,7 @@ GameObject:
   - component: {fileID: 1814298297}
   - component: {fileID: 1814298296}
   - component: {fileID: 1814298295}
+  - component: {fileID: 1814298299}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -436,6 +437,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: HELLOHELLO
   exitName: LevelExitTest
+  requireItem: 1
+  consumeItem: 1
 --- !u!61 &1814298296
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -529,6 +532,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1814298299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814298294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9c3a63474f1fe4f86b59701dca5b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemData: {fileID: 11400000, guid: 86868374032fc2248b5fb026d693db74, type: 2}
 --- !u!1 &2019173019
 GameObject:
   m_ObjectHideFlags: 0
