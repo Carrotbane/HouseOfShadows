@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformsManager : MonoBehaviour
+public class ObjectsManager : MonoBehaviour
 {
     private List<Transform> platformList = new ();
-    private bool state = true;
+    public bool state = true;
     
     private void Start()
     {
@@ -18,7 +18,11 @@ public class PlatformsManager : MonoBehaviour
     public void Toggle()
     {
         state = !state;
-        foreach (Transform platform in platformList)
-            platform.gameObject.SetActive(state);
+        foreach (Transform child in platformList)
+        {
+            bool isActive = child.gameObject.activeSelf;
+            child.gameObject.SetActive(!isActive);
+        }
+            
     }
 }
