@@ -42,7 +42,7 @@ AudioSource:
   m_GameObject: {fileID: 8645041981929125102}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -4981679575424376962, guid: f69cf3215fca0094ea615d15889c1df7, type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -148,10 +148,10 @@ MonoBehaviour:
   targetVolume: 1
   fadeSpeed: 1
   clipsToPlay:
-  - {fileID: 8300000, guid: 27e8fa933b0e51b4685cf41b7e620f15, type: 3}
+  - {fileID: 0}
   minTime: 0
   maxTime: 0
   minVolume: 1
   maxVolume: 1
-  minPitch: 0.894
-  maxPitch: 1.42
+  minPitch: 1
+  maxPitch: 1
