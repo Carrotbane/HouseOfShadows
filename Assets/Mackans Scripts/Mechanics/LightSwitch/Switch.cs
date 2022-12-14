@@ -17,17 +17,19 @@ public class Switch : MonoBehaviour
     private SpriteRenderer _renderer;
     private ObjectsManager _objManager;
 
+    public AudioPlay audioPlay;
+
     private void Start()
     {
         _renderer = GetComponent<SpriteRenderer>();
-        _objManager = Target.GetComponent<ObjectsManager>();
+        _objManager = Target.GetComponent<ObjectsManager>();    
     }
 
     public void Use()
     {
         Target.SendMessage("Toggle");
-        
         _renderer.sprite = _objManager.state ? 
             switchOnSprite : switchOffSprite ;
+        audioPlay.PlayAudio();
     }
 }
