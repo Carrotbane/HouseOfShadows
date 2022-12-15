@@ -1,20 +1,36 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Camera_Follow_Two : MonoBehaviour
 {
- 
+     private Camera cameraObj;
+     private Vector3 middle;
      public Transform Human, Shadow, CameraFocus;
-     public float minSizeY = 5f;
- 
+     public float minSizeY = 5f, factor = 0.5f;
+     public bool SceneHasCenter = true, lockXaxis, lockYaxis;
+     
+     private void Start()
+     {
+         cameraObj = GetComponent<Camera>();
+     }
+
      void SetCameraPos() {
-         Vector3 middle = (Human.position + Shadow.position) * 0.5f;
- 
-         GetComponent<Camera>().transform.position = new Vector3(
-             middle.x,
-             middle.y,
-             GetComponent<Camera>().transform.position.z
+         if (SceneHasCenter)
+         {
+             Vector3 playerCenter = (Human.position + Shadow.position) * 0.5f;
+             Vector3 centerDeltaDistance = playerCenter - CameraFocus.position;
+             middle = playerCenter - centerDeltaDistance * factor;
+             //middle = playerCenter + CameraFocus.position * SceneCenterSkew;
+         }
+         else
+             middle = (Human.position + Shadow.position) * 0.5f;
+
+         cameraObj.transform.position = new Vector3(
+             lockXaxis ? CameraFocus.position.x : middle.x,
+             lockYaxis ? CameraFocus.position.y : middle.y,
+             cameraObj.transform.position.z
          );
      }
  
@@ -28,7 +44,7 @@ public class Camera_Follow_Two : MonoBehaviour
  
          //computing the size
          float camSizeX = Mathf.Max(width, minSizeX);
-         GetComponent<Camera>().orthographicSize = Mathf.Max(height,
+         cameraObj.orthographicSize = Mathf.Max(height,
              camSizeX * Screen.height / Screen.width, minSizeY);
      }
  
