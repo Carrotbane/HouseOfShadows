@@ -125,3 +125,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   referenceItem: {fileID: 11400000, guid: 86868374032fc2248b5fb026d693db74, type: 2}
+  onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6277132550373797831, guid: d3d7e827d3dd87b429cc2015e5e6e510, type: 3}
+        m_TargetAssemblyTypeName: AudioPlayRun, Assembly-CSharp
+        m_MethodName: PlayAudioRun
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

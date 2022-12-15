@@ -21,6 +21,12 @@ public class AudioPlay : MonoBehaviour
     public bool playWithFade = false;
     [Range(0.0f, 1.0f)]
     public float targetVolume = 1f;
+
+    internal void Invoke()
+    {
+        throw new System.NotImplementedException();
+    }
+
     [Range(0.0f, 3.0f)]
     public float fadeSpeed = 1f;
 
