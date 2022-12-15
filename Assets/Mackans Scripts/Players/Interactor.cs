@@ -40,7 +40,7 @@ public class Interactor : MonoBehaviour
 
         if (InColliders != null)
         {
-            foreach (var col in InColliders.Where(col => col != null)) // && col.gameObject.CompareTag("Switch")
+            foreach (var col in InColliders.Where(col => col != null))
             {
                 if (col.TryGetComponent(out Interactable script))
                 {

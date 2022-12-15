@@ -111,7 +111,7 @@
                     "path": "<Keyboard>/ctrl",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Shadow",
+                    "groups": "",
                     "action": "S_Interact",
                     "isComposite": false,
                     "isPartOfComposite": false

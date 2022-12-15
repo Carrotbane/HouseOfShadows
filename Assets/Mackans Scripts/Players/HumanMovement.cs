@@ -17,7 +17,9 @@ public class HumanMovement : MonoBehaviour
     private HumanCore humanCore;
     private Rigidbody2D rigidBody;
 
+    [HideInInspector]
     public float moveValue;
+    [HideInInspector]
     public bool isCrouching, isInput;
 
     private void Start()
@@ -83,8 +85,6 @@ public class HumanMovement : MonoBehaviour
     {
         if (humanCore.isGrounded)
         {
-            //GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpForce);
-            
             rigidBody.velocity = new Vector2(
                 xVelocity, jumpForce);
         }

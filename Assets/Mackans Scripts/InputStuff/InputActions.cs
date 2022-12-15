@@ -133,7 +133,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/ctrl"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Shadow"",
+                    ""groups"": """",
                     ""action"": ""S_Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
