@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Switch : MonoBehaviour
 {
@@ -21,7 +17,7 @@ public class Switch : MonoBehaviour
     private SpriteRenderer _renderer;
     private ObjectsManager _objManager;
 
-    //public AudioPlay audioPlay;
+    public AudioPlay audioPlay;
 
     private void Start()
     {
@@ -32,7 +28,7 @@ public class Switch : MonoBehaviour
     private void StateChange()
     {
         Target.SendMessage("Toggle");
-        //audioPlay.PlayAudio();
+        audioPlay.PlayAudio();
         
         _renderer.sprite = _objManager.state ? 
             switchOnSprite : switchOffSprite ;
