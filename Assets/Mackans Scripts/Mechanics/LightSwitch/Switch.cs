@@ -4,10 +4,7 @@ public class Switch : MonoBehaviour
 {
     [SerializeField]
     private GameObject Target;
-    
-    [SerializeField] 
-    private bool holdDown;
-    
+
     [SerializeField]
     private Sprite switchOnSprite;
     
