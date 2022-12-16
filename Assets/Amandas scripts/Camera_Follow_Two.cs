@@ -17,6 +17,7 @@ public class Camera_Follow_Two : MonoBehaviour
      [SerializeField, Range(1f, 4f)] private float sizingSpeed = 2f;
      [SerializeField, Range(0f, 20f)] private float overShoot = 12f, minSizeY = 8.5f;
      [SerializeField, Range(0f, 0.5f)] private float factor = 0.12f;
+     [SerializeField, Range(0f, 3f)] private float timeUntilMove;
      
      private void Start()
      {
@@ -24,7 +25,16 @@ public class Camera_Follow_Two : MonoBehaviour
          boundaries = GameObject.Find("MapBoundaries").GetComponent<Boundaries>();
      }
  
-     private void Update() {
+     private void Update()
+     {
+         if (!timeUntilMove.Equals(0))
+         {
+             timeUntilMove -= Time.deltaTime;
+             if (timeUntilMove < 0)
+                 timeUntilMove = 0;
+             return;
+         }
+         
          SetCameraSize();
          SetCameraPos();
      }
