@@ -1,15 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Camera_Follow_Two : MonoBehaviour
 {
      private Camera cameraObj;
      private Vector3 middle, dCenterDist;
+     private float xPos, yPos;
+     
      public Transform Human, Shadow, CameraFocus;
-     public float minSizeY = 5f, factor = 0.5f, overShoot = 5f;
      public bool SceneHasCenter = true, lockXaxis, lockYaxis;
+     [SerializeField, Range(1f, 4f)] private float trackingSpeed = 0.5f;
+     [SerializeField, Range(0f, 20f)] private float overShoot = 5f, minSizeY = 5f;
+     [SerializeField, Range(0f, 1f)] private float factor = 0.5f;
      
      private void Start()
      {
@@ -21,18 +26,19 @@ public class Camera_Follow_Two : MonoBehaviour
          {
              Vector3 playerCenter = (Human.position + Shadow.position) * 0.5f;
              dCenterDist = playerCenter - CameraFocus.position;
-             middle = playerCenter - dCenterDist * factor; //Vector3.mu(
-             //Mathf.Sqrt(dCenterDist.x), 
-             //Mathf.Sqrt(dCenterDist.y), 
-             //dCenterDist.z) * 0.5f;
+             middle = playerCenter - dCenterDist * factor;
          }
          else
              middle = (Human.position + Shadow.position) * 0.5f;
 
+         Vector3 cameraPos = cameraObj.transform.position;
+         xPos = Mathf.Lerp(cameraPos.x, middle.x, Time.deltaTime * trackingSpeed);
+         yPos = Mathf.Lerp(cameraPos.y, middle.y, Time.deltaTime * trackingSpeed);
+
          cameraObj.transform.position = new Vector3(
-             lockXaxis ? CameraFocus.position.x : middle.x,
-             lockYaxis ? CameraFocus.position.y : middle.y,
-             cameraObj.transform.position.z
+             lockXaxis ? CameraFocus.position.x : xPos,
+             lockYaxis ? CameraFocus.position.y : yPos,
+             cameraPos.z
          );
      }
  
@@ -41,8 +47,8 @@ public class Camera_Follow_Two : MonoBehaviour
          float minSizeX = minSizeY * Screen.width / Screen.height;
  
          //multiplying by 0.5, because the orthographicSize is actually half the height
-         float width = Mathf.Abs(Human.position.x - Shadow.position.x) * 0.5f + overShoot;
-         float height = Mathf.Abs(Human.position.y - Shadow.position.y) * 0.5f + overShoot;
+         float width = 0.5f * (Mathf.Abs(Human.position.x - Shadow.position.x) + overShoot);
+         float height = 0.5f * (Mathf.Abs(Human.position.y - Shadow.position.y) + overShoot);
  
          //computing the size
          float camSizeX = Mathf.Max(width, minSizeX);

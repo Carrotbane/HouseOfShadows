@@ -1357,7 +1357,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 39.07, y: -16.1, z: -10}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3580,7 +3580,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660009645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.11, y: -14.89, z: 0}
+  m_LocalPosition: {x: 38.38, y: -15.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4150,17 +4150,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1776156204 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2742097443499523245, guid: aae9d38c4adb48645aaa24acdcbc1c93, type: 3}
-  m_PrefabInstance: {fileID: 1159067873820394803}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cef0cd719e7a22a458f66b695324263f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1776156212 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4938235923427231661, guid: aae9d38c4adb48645aaa24acdcbc1c93, type: 3}
@@ -4843,18 +4832,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1159067874456410733, guid: aae9d38c4adb48645aaa24acdcbc1c93, type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1776156204}
-    - target: {fileID: 1159067874456410733, guid: aae9d38c4adb48645aaa24acdcbc1c93, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1159067874456410733, guid: aae9d38c4adb48645aaa24acdcbc1c93, type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: InteractEvent
-      objectReference: {fileID: 0}
     - target: {fileID: 1159067874456410734, guid: aae9d38c4adb48645aaa24acdcbc1c93, type: 3}
       propertyPath: m_Name
       value: Players
@@ -4891,10 +4868,6 @@ PrefabInstance:
       propertyPath: tiltInDegrees
       value: 720
       objectReference: {fileID: 0}
-    - target: {fileID: 6870722865067997951, guid: aae9d38c4adb48645aaa24acdcbc1c93, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: e85f37c9068ea7044b6f3cc8eb104f6c, type: 3}
     - target: {fileID: 6919995852668980905, guid: aae9d38c4adb48645aaa24acdcbc1c93, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.45

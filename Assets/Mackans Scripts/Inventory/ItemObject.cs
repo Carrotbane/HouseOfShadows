@@ -9,11 +9,9 @@ public class ItemObject : MonoBehaviour
     public UnityEvent onTriggerEnter;
 
     private void Start()
-    { 
-        
+    {
         inventorySystem = GameObject.Find("Inventory").GetComponent<InventorySystem>();
         inventorySlotManager = GameObject.Find("InventoryBar").GetComponent<InventorySlotManager>();
-
     }
     
     private void OnTriggerEnter2D(Collider2D col)
@@ -24,7 +22,6 @@ public class ItemObject : MonoBehaviour
             inventorySystem.Add(referenceItem);
             onTriggerEnter.Invoke();
             Destroy(gameObject);
-           
         }
     }
 }

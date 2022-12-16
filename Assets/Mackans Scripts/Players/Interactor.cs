@@ -10,11 +10,17 @@ public class Interactor : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.CompareTag("GroundCheck"))
+            return;
+        
         InColliders.Add(col);
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
+        if (col.CompareTag("GroundCheck"))
+            return;
+        
         if (isPressed)
         {
             isPressed = false;
