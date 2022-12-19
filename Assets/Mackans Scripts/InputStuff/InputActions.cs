@@ -80,6 +80,15 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PAUSEGAME!"",
+                    ""type"": ""Button"",
+                    ""id"": ""2314f9b4-535c-40a2-ad55-2c23e05e2fba"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -225,6 +234,28 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                     ""action"": ""S_Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""072dc8ef-5b77-49ec-94d0-fbe27d213b28"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PAUSEGAME!"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1be5e4d2-95af-4126-a18f-52952e9ee304"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PAUSEGAME!"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -695,6 +726,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         m_Player_H_Interact = m_Player.FindAction("H_Interact", throwIfNotFound: true);
         m_Player_S_Move = m_Player.FindAction("S_Move", throwIfNotFound: true);
         m_Player_S_Interact = m_Player.FindAction("S_Interact", throwIfNotFound: true);
+        m_Player_PAUSEGAME = m_Player.FindAction("PAUSEGAME!", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -772,6 +804,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_H_Interact;
     private readonly InputAction m_Player_S_Move;
     private readonly InputAction m_Player_S_Interact;
+    private readonly InputAction m_Player_PAUSEGAME;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
@@ -782,6 +815,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         public InputAction @H_Interact => m_Wrapper.m_Player_H_Interact;
         public InputAction @S_Move => m_Wrapper.m_Player_S_Move;
         public InputAction @S_Interact => m_Wrapper.m_Player_S_Interact;
+        public InputAction @PAUSEGAME => m_Wrapper.m_Player_PAUSEGAME;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -809,6 +843,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @S_Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnS_Interact;
                 @S_Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnS_Interact;
                 @S_Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnS_Interact;
+                @PAUSEGAME.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPAUSEGAME;
+                @PAUSEGAME.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPAUSEGAME;
+                @PAUSEGAME.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPAUSEGAME;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -831,6 +868,9 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 @S_Interact.started += instance.OnS_Interact;
                 @S_Interact.performed += instance.OnS_Interact;
                 @S_Interact.canceled += instance.OnS_Interact;
+                @PAUSEGAME.started += instance.OnPAUSEGAME;
+                @PAUSEGAME.performed += instance.OnPAUSEGAME;
+                @PAUSEGAME.canceled += instance.OnPAUSEGAME;
             }
         }
     }
@@ -975,6 +1015,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         void OnH_Interact(InputAction.CallbackContext context);
         void OnS_Move(InputAction.CallbackContext context);
         void OnS_Interact(InputAction.CallbackContext context);
+        void OnPAUSEGAME(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

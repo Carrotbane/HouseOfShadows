@@ -8,6 +8,7 @@ public class HumanCore : MonoBehaviour
     private Rigidbody2D rigidBody;
     private HumanMovement humanMovement;
     private SpriteRenderer spriteRenderer;
+    private PauseGame pauseGame;
 
     private void Start()
     {
@@ -15,6 +16,7 @@ public class HumanCore : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         humanMovement = GetComponent<HumanMovement>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        pauseGame = GameObject.Find("PauseMenu").GetComponent<PauseGame>();
     }
 
     private void Update()
@@ -34,5 +36,10 @@ public class HumanCore : MonoBehaviour
                 _ => spriteRenderer.flipX
             }; 
         }
+    }
+
+    public void Pause()
+    {
+        pauseGame.TogglePause();
     }
 }

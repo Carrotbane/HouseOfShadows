@@ -196,6 +196,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: bdeb26a6-eb0b-41ad-8626-45b57dc266ba
     m_ActionName: Player/S_Interact[/Keyboard/o]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 529834198775564611}
+        m_TargetAssemblyTypeName: HumanCore, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2314f9b4-535c-40a2-ad55-2c23e05e2fba
+    m_ActionName: Player/PAUSEGAME![/Keyboard/escape,/Keyboard/p]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
