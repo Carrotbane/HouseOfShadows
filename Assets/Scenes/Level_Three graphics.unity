@@ -6218,6 +6218,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 673315457, guid: aae9d38c4adb48645aaa24acdcbc1c93, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.357
+      objectReference: {fileID: 0}
     - target: {fileID: 1159067874456410732, guid: aae9d38c4adb48645aaa24acdcbc1c93, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -10664,7 +10668,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.308
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -14918,7 +14922,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.301
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -15323,7 +15327,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.327
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -16247,7 +16251,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.293
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -16358,7 +16362,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.353
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -16685,7 +16689,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.42
       inSlope: 0
       outSlope: 0
       tangentMode: 0
