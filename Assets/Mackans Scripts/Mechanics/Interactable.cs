@@ -10,17 +10,17 @@ public class Interactable : MonoBehaviour
         if (_holdDown)
         {
             if (context.performed || context.canceled)
-                SendMessage("Use");
+                SendMessage("Use", SendMessageOptions.DontRequireReceiver);
         }
         else
         {
             if (context.performed)
-                SendMessage("Use");
+                SendMessage("Use", SendMessageOptions.DontRequireReceiver);
         }
     }
 
     public void InteractLeave()
     {
-        SendMessage("Use");
+        SendMessage("Use", SendMessageOptions.DontRequireReceiver);
     }
 }

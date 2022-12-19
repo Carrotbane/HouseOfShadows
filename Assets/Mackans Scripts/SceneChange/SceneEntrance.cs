@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class SceneEntrance : MonoBehaviour
 {
-    public int lastExitName;
+    public int lastExitValue;
     
     void Start()
     {
-        if (PlayerPrefs.GetInt("LastExitName") == lastExitName)
+        if (PlayerPrefs.GetInt("LastExitName") == lastExitValue)
         {
             Vector3 newPosition = transform.position;
             Transform playersTransform = GameObject.Find("Players").transform;
