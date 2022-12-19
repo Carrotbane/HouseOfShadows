@@ -10,9 +10,10 @@ public class Camera_Follow_Two : MonoBehaviour
      private Camera cameraObj;
      private Vector3 middle, dCenterDist;
      private float xPos, yPos;
+     private Transform Human, Shadow;
      
-     public Transform Human, Shadow, CameraFocus;
-     public bool SceneHasCenter = true, lockXaxis, lockYaxis;
+     [SerializeField] private Transform CameraFocus;
+     [SerializeField] private bool SceneHasCenter = true, lockXaxis, lockYaxis;
      [SerializeField, Range(1f, 4f)] private float trackingSpeed = 3f;
      [SerializeField, Range(1f, 4f)] private float sizingSpeed = 2f;
      [SerializeField, Range(0f, 20f)] private float overShoot = 12f, minSizeY = 8.5f;
@@ -23,6 +24,8 @@ public class Camera_Follow_Two : MonoBehaviour
      {
          cameraObj = GetComponent<Camera>();
          boundaries = GameObject.Find("MapBoundaries").GetComponent<Boundaries>();
+         Human = GameObject.Find("Human").GetComponent<Transform>();
+         Shadow = GameObject.Find("Shadow").GetComponent<Transform>();
      }
  
      private void Update()
