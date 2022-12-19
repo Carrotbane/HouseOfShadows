@@ -129,6 +129,17 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""0e503df3-d796-4d99-aeb2-b0e9bc255522"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""H_Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""1ee3ec60-38ed-495d-b3f5-9cb1d3eee2d0"",
                     ""path"": ""<Keyboard>/ctrl"",
                     ""interactions"": """",
@@ -141,7 +152,7 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ab08a86a-e7f0-4443-82ad-a095b89f0a75"",
-                    ""path"": ""<Keyboard>/w"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
