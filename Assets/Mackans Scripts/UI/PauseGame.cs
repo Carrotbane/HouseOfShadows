@@ -17,7 +17,7 @@ public class PauseGame : MonoBehaviour
     {
         pauseMenu.SetActive(!pauseMenu.activeSelf);
         
-        if (!pauseMenu.activeSelf)
+        if (pauseMenu.activeSelf)
             Time.timeScale = 0f;
         else
             Time.timeScale = 1f;
