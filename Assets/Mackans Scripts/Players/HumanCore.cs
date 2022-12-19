@@ -16,7 +16,7 @@ public class HumanCore : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         humanMovement = GetComponent<HumanMovement>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        pauseGame = GameObject.Find("PauseMenu").GetComponent<PauseGame>();
+        pauseGame = GameObject.Find("GameUI").GetComponentInChildren<PauseGame>();
     }
 
     private void Update()
