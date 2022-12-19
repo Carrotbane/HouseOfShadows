@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 298c3035b7f42714dbe0a49362f29bec
+  - enabled: 1
+    path: Assets/Scenes/Level_Attic.unity
+    guid: 1f3b70592961e874abb10679831dfbd2
+  - enabled: 1
+    path: Assets/Scenes/Level_Three graphics.unity
+    guid: aa5b13f67229cf44bad29565cba037fc
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
@@ -17,17 +26,8 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Mackans/HELLOHELLO.unity
     guid: 0ed2fc66033e7de47b5f0859b6c143ba
-  - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 298c3035b7f42714dbe0a49362f29bec
-  - enabled: 1
-    path: Assets/Scenes/Level_Attic.unity
-    guid: 1f3b70592961e874abb10679831dfbd2
   - enabled: 0
     path: Assets/Scenes/Mackans/LevelExitTest.unity
     guid: 9455c11bb055dd94e8371dec8182af98
-  - enabled: 1
-    path: Assets/Scenes/Level_Three graphics.unity
-    guid: aa5b13f67229cf44bad29565cba037fc
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: d81fde8c3ca173847bdb5e789c6be2de, type: 2}
