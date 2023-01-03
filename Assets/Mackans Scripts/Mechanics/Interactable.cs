@@ -3,11 +3,12 @@ using UnityEngine.InputSystem;
 
 public class Interactable : MonoBehaviour
 {
-    public bool _holdDown;
+    public bool HoldDown;
+    public bool HumanCanInteract = true, ShadowCanInteract = true;
 
     public void Interact(InputAction.CallbackContext context)
     {
-        if (_holdDown)
+        if (HoldDown)
         {
             if (context.performed || context.canceled)
                 SendMessage("Use", SendMessageOptions.DontRequireReceiver);

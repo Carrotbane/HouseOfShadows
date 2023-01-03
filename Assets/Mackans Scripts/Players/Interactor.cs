@@ -26,7 +26,7 @@ public class Interactor : MonoBehaviour
             isPressed = false;
             if (col.TryGetComponent(out Interactable script))
             {
-                if (script._holdDown)
+                if (script.HoldDown)
                 {
                     script.InteractLeave();
                 }
@@ -50,6 +50,11 @@ public class Interactor : MonoBehaviour
             {
                 if (col.TryGetComponent(out Interactable script))
                 {
+                    if (!script.HumanCanInteract && gameObject.name.Equals("Human"))
+                        return;
+                    if (!script.ShadowCanInteract && gameObject.name.Equals("Shadow"))
+                        return;
+                    
                     script.Interact(context);
                     
                     if (context.performed)

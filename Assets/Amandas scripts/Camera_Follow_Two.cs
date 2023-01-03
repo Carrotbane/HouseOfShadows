@@ -17,6 +17,7 @@ public class Camera_Follow_Two : MonoBehaviour
      [SerializeField, Range(1f, 4f)] private float trackingSpeed = 3f;
      [SerializeField, Range(1f, 4f)] private float sizingSpeed = 2f;
      [SerializeField, Range(0f, 20f)] private float overShoot = 12f, minSizeY = 8.5f;
+     [SerializeField, Range(-10f, 10f)] private float offsetY;
      [SerializeField, Range(0f, 0.5f)] private float factor = 0.12f;
      [SerializeField, Range(0f, 3f)] private float timeUntilMove;
      
@@ -62,7 +63,7 @@ public class Camera_Follow_Two : MonoBehaviour
      private void SetCameraPos() {
          if (SceneHasCenter)
          {
-             Vector3 playerCenter = (Human.position + Shadow.position) * 0.5f;
+             Vector3 playerCenter = (Human.position + Shadow.position) * 0.5f + new Vector3(0, offsetY, 0);
              dCenterDist = playerCenter - CameraFocus.position;
              middle = playerCenter - dCenterDist * factor;
          }
@@ -84,7 +85,7 @@ public class Camera_Follow_Two : MonoBehaviour
      private void MaintainBoundaries()
      {
          float camRadY = cameraObj.orthographicSize;
-         float camRadX = cameraObj.orthographicSize * cameraObj.aspect;
+         float camRadX = camRadY * cameraObj.aspect;
          
          if (yPos > boundaries.top - camRadY)
              yPos = boundaries.top - camRadY;

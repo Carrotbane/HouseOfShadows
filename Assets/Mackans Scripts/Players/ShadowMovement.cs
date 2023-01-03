@@ -13,8 +13,8 @@ public class ShadowMovement : MonoBehaviour
     private float moveSpeedX, moveSpeedY, moveDirectionX, moveDirectionY;
     private Rigidbody2D rigidBody;
     
-    public Vector2 moveVector;
-    public bool isXInput, isYInput;
+    [HideInInspector] public Vector2 moveVector;
+    [HideInInspector] public bool isXInput, isYInput;
     
     private void Start()
     {
