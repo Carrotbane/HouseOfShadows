@@ -9418,7 +9418,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45baff87b70045468648eb397728379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _holdDown: 0
+  HoldDown: 0
+  HumanCanInteract: 1
+  ShadowCanInteract: 1
 --- !u!1 &708866444
 GameObject:
   m_ObjectHideFlags: 0
@@ -17329,6 +17331,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -523186481
       objectReference: {fileID: 0}
+    - target: {fileID: 7270523215809956766, guid: 4e2566213f97b10439bc04985e01044c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 8898801253693457762, guid: 4e2566213f97b10439bc04985e01044c, type: 3}
       propertyPath: m_Name
       value: GoldKeyPhysical
@@ -18269,6 +18275,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -523186481
       objectReference: {fileID: 0}
+    - target: {fileID: 288902338562209880, guid: 8ae95d9caebc03f4d887edf1f45aa34d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 1989062623343277732, guid: 8ae95d9caebc03f4d887edf1f45aa34d, type: 3}
       propertyPath: m_Name
       value: SilverKeyPhysical
@@ -25438,7 +25448,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45baff87b70045468648eb397728379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _holdDown: 0
+  HoldDown: 0
+  HumanCanInteract: 1
+  ShadowCanInteract: 1
 --- !u!114 &1643835300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35101,7 +35113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45baff87b70045468648eb397728379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _holdDown: 0
+  HoldDown: 0
+  HumanCanInteract: 1
+  ShadowCanInteract: 1
 --- !u!4 &963878269693656072
 Transform:
   m_ObjectHideFlags: 0
@@ -35293,7 +35307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45baff87b70045468648eb397728379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _holdDown: 1
+  HoldDown: 0
+  HumanCanInteract: 1
+  ShadowCanInteract: 1
 --- !u!1 &1858693560678380271
 GameObject:
   m_ObjectHideFlags: 0
@@ -36395,6 +36411,7 @@ MonoBehaviour:
   sizingSpeed: 2
   overShoot: 13.3
   minSizeY: 15.5
+  offsetY: 0
   factor: 0.12
   timeUntilMove: 0
 --- !u!4 &4048577264896784543
@@ -36762,7 +36779,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45baff87b70045468648eb397728379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _holdDown: 0
+  HoldDown: 0
+  HumanCanInteract: 1
+  ShadowCanInteract: 1
 --- !u!1 &5140870616017296890
 GameObject:
   m_ObjectHideFlags: 0
@@ -37778,7 +37797,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45baff87b70045468648eb397728379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _holdDown: 1
+  HoldDown: 0
+  HumanCanInteract: 1
+  ShadowCanInteract: 1
 --- !u!212 &8666528857907868122
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37878,7 +37899,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45baff87b70045468648eb397728379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _holdDown: 1
+  HoldDown: 0
+  HumanCanInteract: 1
+  ShadowCanInteract: 1
 --- !u!4 &9086541803289567941
 Transform:
   m_ObjectHideFlags: 0
