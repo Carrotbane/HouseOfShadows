@@ -6,7 +6,7 @@ using UnityEngine;
 public class FallThroughPlatform : MonoBehaviour
 {
     private Collider2D _collider2D;
-    private bool _playerOnPlatform;
+    private bool _playerOnPlatform, _state = true, _isWaiting;
     private HumanMovement humanMovement;
     private Collider2D humanCollider2D;
 
@@ -21,16 +21,31 @@ public class FallThroughPlatform : MonoBehaviour
     {
         if (_playerOnPlatform && humanMovement.isCrouching)
         {
-            //_collider2D.enabled = false;
-            Physics2D.IgnoreCollision(_collider2D, humanCollider2D, true);
+            _isWaiting = true;
+            SetCollision(false);
             StartCoroutine(EnableCollider());
         }
-    }
 
+        if (_isWaiting)
+            return;
+        
+        if (humanMovement.isCrouching)
+            SetCollision(false);
+        else if (!_state && !_playerOnPlatform)
+            SetCollision(true);
+    }
+    
     private IEnumerator EnableCollider()
     {
-        yield return new WaitForSeconds(0.5f);
-        Physics2D.IgnoreCollision(_collider2D, humanCollider2D, false);
+        yield return new WaitForSeconds(0.3f);
+        _isWaiting = false;
+        SetCollision(true);
+    }
+
+    private void SetCollision(bool isCollide)
+    {
+        Physics2D.IgnoreCollision(_collider2D, humanCollider2D, !isCollide);
+        _state = isCollide;
     }
 
     private void SetPlayerOnPlatform(Collision2D other, bool value)
@@ -47,6 +62,6 @@ public class FallThroughPlatform : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D otherCol)
     {
-        SetPlayerOnPlatform(otherCol, true);
+        SetPlayerOnPlatform(otherCol, false);
     }
 }
