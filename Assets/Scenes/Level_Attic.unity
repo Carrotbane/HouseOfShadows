@@ -12807,7 +12807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45baff87b70045468648eb397728379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HoldDown: 0
+  HoldDown: 1
   HumanCanInteract: 1
   ShadowCanInteract: 1
 --- !u!1 &8169619585315857057

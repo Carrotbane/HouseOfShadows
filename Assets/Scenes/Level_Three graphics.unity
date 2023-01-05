@@ -21036,7 +21036,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.764151, g: 0.7365873, b: 0.6740388, a: 1}
-  m_Intensity: 0.4
+  m_Intensity: 0.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000cfced0e0
@@ -37633,7 +37633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45baff87b70045468648eb397728379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HoldDown: 0
+  HoldDown: 1
   HumanCanInteract: 1
   ShadowCanInteract: 1
 --- !u!1 &1858693560678380271
@@ -40125,7 +40125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45baff87b70045468648eb397728379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HoldDown: 0
+  HoldDown: 1
   HumanCanInteract: 1
   ShadowCanInteract: 1
 --- !u!212 &8666528857907868122
@@ -40227,7 +40227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45baff87b70045468648eb397728379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HoldDown: 0
+  HoldDown: 1
   HumanCanInteract: 1
   ShadowCanInteract: 1
 --- !u!4 &9086541803289567941
