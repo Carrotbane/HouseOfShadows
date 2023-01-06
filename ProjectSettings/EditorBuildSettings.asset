@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_Attic.unity
     guid: 1f3b70592961e874abb10679831dfbd2
   - enabled: 1
+    path: Assets/Scenes/Main Hall.unity
+    guid: 77aaa4c83a3bbc747a462ea51462488f
+  - enabled: 1
     path: Assets/Scenes/Level_Three graphics.unity
     guid: aa5b13f67229cf44bad29565cba037fc
   - enabled: 0
