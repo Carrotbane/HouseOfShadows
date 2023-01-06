@@ -63,9 +63,8 @@ public class HumanMovement : MonoBehaviour
         moveSpeed = Mathf.Clamp(moveSpeed, 0, maxMoveSpeed);
 
         //Calculates and updates position
-        
         rigidBody.velocity = new Vector2(
-            moveDirection * moveSpeed, yVelocity);
+            moveDirection * moveSpeed, Mathf.Clamp(yVelocity, -25f, float.MaxValue));
     }
     
     private void ChangeMoveDirectionIfStill()
