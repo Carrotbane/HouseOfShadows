@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider2D))]
 public class CanKillPlayer : MonoBehaviour
 {
+    public UnityEvent onTriggerEnter;
     [SerializeField] private Transform resetPosition;
     [SerializeField] private _enumOption _playerOption = _enumOption.Human;
     
@@ -20,6 +22,7 @@ public class CanKillPlayer : MonoBehaviour
         {
             var player = GameObject.Find("Human").transform;
             player.position = resetPosition.position;
+            onTriggerEnter.Invoke();
         }
         else
         {

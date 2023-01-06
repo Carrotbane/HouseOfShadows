@@ -704,13 +704,13 @@ MonoBehaviour:
   targetVolume: 0.829
   fadeSpeed: 1
   clipsToPlay:
-  - {fileID: 8300000, guid: a12bcec9d7456064b9fef3a9fed37f3b, type: 3}
+  - {fileID: 8300000, guid: 33bd94710b898654681a49ccd44888b5, type: 3}
   minTime: 0
   maxTime: 0
   minVolume: 1
   maxVolume: 1
-  minPitch: 1.911
-  maxPitch: 2.245
+  minPitch: 1.43
+  maxPitch: 1.79
 --- !u!114 &1038882505169962594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -730,13 +730,13 @@ MonoBehaviour:
   targetVolume: 1
   fadeSpeed: 1
   clipsToPlay:
-  - {fileID: 8300000, guid: a12bcec9d7456064b9fef3a9fed37f3b, type: 3}
+  - {fileID: 8300000, guid: 725bd21dab9d70847b0a6ab9e230a726, type: 3}
   minTime: 0
   maxTime: 0
   minVolume: 1
   maxVolume: 1
-  minPitch: 1.623
-  maxPitch: 2.16
+  minPitch: 1.48
+  maxPitch: 1.96
 --- !u!1 &7398043378184228652
 GameObject:
   m_ObjectHideFlags: 0
