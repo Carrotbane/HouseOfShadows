@@ -38,7 +38,7 @@ public class HumanCore : MonoBehaviour
         }
     }
 
-    public void Pause()
+    public void PauseEvent()
     {
         pauseGame.TogglePause();
     }
