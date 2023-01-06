@@ -3981,6 +3981,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: targetVolume
+      value: 0.754
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: clipsToPlay.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 860d5b3cc25b36841b64b9b6c0975109, type: 3}
@@ -5771,6 +5775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4402c84e18847984a9ba96c3e4756233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  State: 1
 --- !u!251 &1060685236
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -9707,6 +9712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4402c84e18847984a9ba96c3e4756233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  State: 1
 --- !u!251 &1478614908
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -10216,6 +10222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4402c84e18847984a9ba96c3e4756233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  State: 1
 --- !u!251 &1684477110
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -11281,6 +11288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4402c84e18847984a9ba96c3e4756233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  State: 1
 --- !u!251 &1994445977
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -11985,6 +11993,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 640603093}
     m_Modifications:
+    - target: {fileID: 8645041981929125096, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645041981929125096, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -8268917551187106217, guid: f69cf3215fca0094ea615d15889c1df7, type: 2}
     - target: {fileID: 8645041981929125097, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -12033,6 +12049,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ambience
       objectReference: {fileID: 0}
+    - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: oneShot
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: playOnStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: clipsToPlay.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b101ad81954aa794198094cec36dbd4b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 550140bef995a264c850245c5c90be49, type: 3}
 --- !u!1 &2141133981
@@ -13183,9 +13211,12 @@ MonoBehaviour:
   accelMod: 2
   retardMod: -2
   tiltInDegrees: 20
+  shadowAttachLength: 2.5
+  shadowAttachChaseFactor: 1.1
   moveVector: {x: 0, y: 0}
   isXInput: 0
   isYInput: 0
+  isAttached: 0
 --- !u!1001 &6489754931225325080
 PrefabInstance:
   m_ObjectHideFlags: 0
