@@ -6,9 +6,11 @@ using UnityEngine;
 public class FallThroughPlatform : MonoBehaviour
 {
     private Collider2D _collider2D;
-    private bool _playerOnPlatform, _state = true, _isWaiting;
+    private bool _playerOnPlatform, _isWaiting;
     private HumanMovement humanMovement;
     private Collider2D humanCollider2D;
+
+    [HideInInspector] public bool State = true;
 
     private void Start()
     {
@@ -31,7 +33,7 @@ public class FallThroughPlatform : MonoBehaviour
         
         if (humanMovement.isCrouching)
             SetCollision(false);
-        else if (!_state && !_playerOnPlatform)
+        else if (!State && !_playerOnPlatform)
             SetCollision(true);
     }
     
@@ -45,7 +47,7 @@ public class FallThroughPlatform : MonoBehaviour
     private void SetCollision(bool isCollide)
     {
         Physics2D.IgnoreCollision(_collider2D, humanCollider2D, !isCollide);
-        _state = isCollide;
+        State = isCollide;
     }
 
     private void SetPlayerOnPlatform(Collision2D other, bool value)

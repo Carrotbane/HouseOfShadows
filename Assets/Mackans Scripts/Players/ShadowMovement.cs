@@ -12,6 +12,7 @@ public class ShadowMovement : MonoBehaviour
     [SerializeField] private float tiltInDegrees = 20f;
     private float moveSpeedX, moveSpeedY, moveDirectionX, moveDirectionY;
     private Rigidbody2D rigidBody;
+    private Transform shadowTransform;
     
     [HideInInspector] public Vector2 moveVector;
     [HideInInspector] public bool isXInput, isYInput;
@@ -19,6 +20,7 @@ public class ShadowMovement : MonoBehaviour
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        shadowTransform = GameObject.Find("Body").transform;
     }
 
     // The FixedUpdate method is a physics based update, which movement should be part of
@@ -53,7 +55,7 @@ public class ShadowMovement : MonoBehaviour
         moveSpeedY = Mathf.Clamp(moveSpeedY, 0, maxMoveSpeed);
         
         //Updates rotational tilt to simulate movement on X axis
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, 
+        shadowTransform.rotation = Quaternion.Euler(new Vector3(0, 0, 
             tiltInDegrees * (moveSpeedX / maxMoveSpeed) * -moveDirectionX));
 
         //Updates velocity (live speed)

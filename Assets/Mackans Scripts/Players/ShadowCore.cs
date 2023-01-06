@@ -9,10 +9,10 @@ public class ShadowCore : MonoBehaviour
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
         shadowMovement = GetComponent<ShadowMovement>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
