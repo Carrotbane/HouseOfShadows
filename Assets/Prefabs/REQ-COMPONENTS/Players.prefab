@@ -847,13 +847,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e14e63b2ce946c4cb8ab56d7ff6b670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMoveSpeed: 12
+  maxMoveSpeed: 10
   accelMod: 2
   retardMod: -2
   tiltInDegrees: 20
+  shadowAttachLength: 2.5
+  shadowAttachChaseFactor: 1.1
   moveVector: {x: 0, y: 0}
   isXInput: 0
   isYInput: 0
+  isAttached: 0
 --- !u!114 &7186419632029799687
 MonoBehaviour:
   m_ObjectHideFlags: 0

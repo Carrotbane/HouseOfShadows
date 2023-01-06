@@ -6,27 +6,36 @@ using UnityEngine.InputSystem;
 
 public class ShadowMovement : MonoBehaviour
 {
-    [SerializeField] private float maxMoveSpeed = 5f;
+    [SerializeField] private float maxMoveSpeed = 10f;
     [SerializeField] private float accelMod = 2f;
-    [SerializeField] private float retardMod = -3f;
+    [SerializeField] private float retardMod = -2f;
     [SerializeField] private float tiltInDegrees = 20f;
+    [SerializeField] private float shadowAttachLength = 2.5f;
+    [SerializeField] private float shadowAttachChaseFactor = 1.1f;
     private float moveSpeedX, moveSpeedY, moveDirectionX, moveDirectionY;
     private Rigidbody2D rigidBody;
     private Transform shadowTransform;
+    private Transform humanTransform;
+    private SpriteRenderer spriteRenderer;
     
     [HideInInspector] public Vector2 moveVector;
-    [HideInInspector] public bool isXInput, isYInput;
+    [HideInInspector] public bool isXInput, isYInput, isAttached = false;
     
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         shadowTransform = GameObject.Find("Body").transform;
+        humanTransform = GameObject.Find("Human").transform;
     }
 
     // The FixedUpdate method is a physics based update, which movement should be part of
     private void FixedUpdate()
     {
-        MoveAction();
+        if (!isAttached)
+            MoveAction();
+        else
+            MoveAttached();
     }
 
     //Method which calculates current movement
@@ -62,6 +71,31 @@ public class ShadowMovement : MonoBehaviour
         rigidBody.velocity = new Vector2(
             moveDirectionX * moveSpeedX, 
             moveDirectionY * moveSpeedY);
+    }
+
+    private void MoveAttached()
+    {
+        Vector2 dVec2 = humanTransform.position - shadowTransform.position;
+        float dDist = dVec2.magnitude;
+        
+        //If shadow is outside of their attachment range, move towards it
+        if (dDist >= shadowAttachLength)
+        {
+            Vector2 vec2Direction = dVec2.normalized;
+            float speed = Mathf.Pow(
+                dDist - shadowAttachLength * 0.8f,1.5f) * shadowAttachChaseFactor;
+            rigidBody.velocity = vec2Direction * speed;
+        }
+        else
+        {
+            rigidBody.velocity = new Vector2(0, 0);
+        }
+
+        if (!rigidBody.velocity.x.Equals(0))
+            spriteRenderer.flipX = Mathf.Sign(rigidBody.velocity.x).Equals(-1);
+        
+        shadowTransform.rotation = Quaternion.Euler(new Vector3(0, 0, 
+            tiltInDegrees / 8 * -rigidBody.velocity.x));
     }
 
     private void ChangeMoveDirectionIfStill(float speed, ref float dir, char axis)
