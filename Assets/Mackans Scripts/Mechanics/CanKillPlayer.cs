@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class CanKillPlayer : MonoBehaviour
 {
     public UnityEvent onTriggerEnter;
+    public AudioPlay audioPlay;
     [SerializeField] private Transform resetPosition;
     [SerializeField] private _enumOption _playerOption = _enumOption.Human;
     
@@ -23,6 +24,7 @@ public class CanKillPlayer : MonoBehaviour
             var player = GameObject.Find("Human").transform;
             player.position = resetPosition.position;
             onTriggerEnter.Invoke();
+            audioPlay.PlayAudio();
         }
         else
         {
