@@ -11908,12 +11908,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: maxVolume
+      value: 0.604
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: minVolume
+      value: 0.587
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: playOnStart
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: targetVolume
-      value: 0.122
+      value: 0.106
       objectReference: {fileID: 0}
     - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: clipsToPlay.Array.data[0]
@@ -18194,15 +18202,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: maxPitch
-      value: 1
+      value: 1.045
       objectReference: {fileID: 0}
     - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: minPitch
-      value: 1
+      value: 1.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: maxVolume
+      value: 0.586
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: minVolume
+      value: 0.578
       objectReference: {fileID: 0}
     - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: playOnStart
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: targetVolume
+      value: 0.485
       objectReference: {fileID: 0}
     - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: clipsToPlay.Array.data[0]

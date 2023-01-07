@@ -4623,6 +4623,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: maxVolume
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: minVolume
+      value: 0.851
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: playOnStart
       value: 1
       objectReference: {fileID: 0}
@@ -7723,6 +7731,10 @@ PrefabInstance:
     - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: playOnStart
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: targetVolume
+      value: 0.393
       objectReference: {fileID: 0}
     - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: clipsToPlay.Array.data[0]
@@ -28672,8 +28684,8 @@ MonoBehaviour:
   maxTime: 0
   minVolume: 1
   maxVolume: 1
-  minPitch: 1
-  maxPitch: 1
+  minPitch: 0.984
+  maxPitch: 1.007
 --- !u!82 &1643835301
 AudioSource:
   m_ObjectHideFlags: 0
@@ -40749,8 +40761,8 @@ MonoBehaviour:
   maxTime: 0
   minVolume: 1
   maxVolume: 1
-  minPitch: 1
-  maxPitch: 1
+  minPitch: 0.899
+  maxPitch: 1.093
 --- !u!1 &2991114878607283798
 GameObject:
   m_ObjectHideFlags: 0
@@ -41137,13 +41149,13 @@ MonoBehaviour:
   targetVolume: 1
   fadeSpeed: 1
   clipsToPlay:
-  - {fileID: 8300000, guid: 4eb6526d6bd95ac41af4b4ced00f09c3, type: 3}
+  - {fileID: 8300000, guid: 681d473a1ea32b24d895a37f7056fa33, type: 3}
   minTime: 0
   maxTime: 0
   minVolume: 1
   maxVolume: 1
-  minPitch: 1
-  maxPitch: 1
+  minPitch: 0.899
+  maxPitch: 1.109
 --- !u!251 &3799619795832025750
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -42179,13 +42191,13 @@ MonoBehaviour:
   targetVolume: 1
   fadeSpeed: 1
   clipsToPlay:
-  - {fileID: 8300000, guid: 4eb6526d6bd95ac41af4b4ced00f09c3, type: 3}
+  - {fileID: 8300000, guid: 681d473a1ea32b24d895a37f7056fa33, type: 3}
   minTime: 0
   maxTime: 0
   minVolume: 1
   maxVolume: 1
-  minPitch: 1
-  maxPitch: 1
+  minPitch: 0.93
+  maxPitch: 1.077
 --- !u!82 &6339722859771597172
 AudioSource:
   m_ObjectHideFlags: 0
@@ -42414,13 +42426,13 @@ MonoBehaviour:
   targetVolume: 1
   fadeSpeed: 1
   clipsToPlay:
-  - {fileID: 8300000, guid: 4eb6526d6bd95ac41af4b4ced00f09c3, type: 3}
+  - {fileID: 8300000, guid: 681d473a1ea32b24d895a37f7056fa33, type: 3}
   minTime: 0
   maxTime: 0
   minVolume: 1
   maxVolume: 1
-  minPitch: 1
-  maxPitch: 1
+  minPitch: 0.884
+  maxPitch: 1.093
 --- !u!1 &6612879114234449757
 GameObject:
   m_ObjectHideFlags: 0
@@ -42657,8 +42669,8 @@ MonoBehaviour:
   maxTime: 0
   minVolume: 1
   maxVolume: 1
-  minPitch: 1
-  maxPitch: 1
+  minPitch: 0.923
+  maxPitch: 1.086
 --- !u!82 &7697521870775742556
 AudioSource:
   m_ObjectHideFlags: 0

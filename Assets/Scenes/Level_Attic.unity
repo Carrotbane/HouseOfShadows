@@ -4062,12 +4062,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: maxVolume
+      value: 0.589
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: minVolume
+      value: 0.566
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: playOnStart
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: targetVolume
-      value: 0.754
+      value: 0.459
       objectReference: {fileID: 0}
     - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: clipsToPlay.Array.data[0]
@@ -4671,16 +4679,16 @@ MonoBehaviour:
   oneShot: 1
   startDelay: 0
   playWithFade: 0
-  targetVolume: 1
+  targetVolume: 0.891
   fadeSpeed: 1
   clipsToPlay:
   - {fileID: 8300000, guid: 4eb6526d6bd95ac41af4b4ced00f09c3, type: 3}
   minTime: 0
   maxTime: 0
-  minVolume: 1
-  maxVolume: 1
-  minPitch: 1
-  maxPitch: 1
+  minVolume: 0.721
+  maxVolume: 0.726
+  minPitch: 0.868
+  maxPitch: 1.062
 --- !u!82 &629172093
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4737,7 +4745,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.22
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -10523,7 +10531,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.204
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -10582,13 +10590,13 @@ MonoBehaviour:
   targetVolume: 1
   fadeSpeed: 1
   clipsToPlay:
-  - {fileID: 8300000, guid: 4eb6526d6bd95ac41af4b4ced00f09c3, type: 3}
+  - {fileID: 8300000, guid: 681d473a1ea32b24d895a37f7056fa33, type: 3}
   minTime: 0
   maxTime: 0
   minVolume: 1
   maxVolume: 1
-  minPitch: 1
-  maxPitch: 1
+  minPitch: 0.853
+  maxPitch: 1.124
 --- !u!1 &1844819339
 GameObject:
   m_ObjectHideFlags: 0

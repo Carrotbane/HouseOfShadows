@@ -727,16 +727,20 @@ MonoBehaviour:
   oneShot: 1
   startDelay: 0
   playWithFade: 0
-  targetVolume: 1
+  targetVolume: 0.111
   fadeSpeed: 1
   clipsToPlay:
+  - {fileID: 8300000, guid: 35cd1a4b3d2dcf84b952ab16a43a2e48, type: 3}
+  - {fileID: 8300000, guid: e21de4f002423af45871e85b1c3b9fdc, type: 3}
+  - {fileID: 8300000, guid: a18afb201908d8a42b5f07c8e0bcfb14, type: 3}
   - {fileID: 8300000, guid: 725bd21dab9d70847b0a6ab9e230a726, type: 3}
+  - {fileID: 8300000, guid: 1346245eeb5faa44f922a50f6d04ed1c, type: 3}
   minTime: 0
   maxTime: 0
   minVolume: 1
   maxVolume: 1
-  minPitch: 1.48
-  maxPitch: 1.96
+  minPitch: 1.643
+  maxPitch: 1.759
 --- !u!1 &7398043378184228652
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,8 +755,6 @@ GameObject:
   - component: {fileID: 7795018500228366998}
   - component: {fileID: 5920747777269297984}
   - component: {fileID: 7186419632029799687}
-  - component: {fileID: 8750235813462127234}
-  - component: {fileID: 3105695616633971324}
   m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
@@ -869,128 +871,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef0cd719e7a22a458f66b695324263f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &8750235813462127234
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7398043378184228652}
-  m_Enabled: 0
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -5118882547085951263, guid: f69cf3215fca0094ea615d15889c1df7, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.226
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &3105695616633971324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7398043378184228652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b8b4d9a43f0f9241b01357efad86428, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playOnStart: 0
-  oneShot: 1
-  startDelay: 0
-  playWithFade: 0
-  targetVolume: 1
-  fadeSpeed: 1
-  clipsToPlay:
-  - {fileID: 8300000, guid: 262add0e39078b949802a717eb1add8a, type: 3}
-  minTime: 0
-  maxTime: 0
-  minVolume: 1
-  maxVolume: 1
-  minPitch: 1
-  maxPitch: 1
 --- !u!1 &7544265683690256797
 GameObject:
   m_ObjectHideFlags: 0
