@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Interactable))]
 public class SceneExit : MonoBehaviour
 {
+    public AudioPlay audioPlay;
     [SerializeField] private int destinationScene;
     [SerializeField] private bool requireItem;
     [SerializeField] private bool consumeItem;
@@ -43,5 +44,7 @@ public class SceneExit : MonoBehaviour
     {
         if (isInteractable)
             SceneChange();
+            audioPlay.PlayAudio();
+        
     }
 }
