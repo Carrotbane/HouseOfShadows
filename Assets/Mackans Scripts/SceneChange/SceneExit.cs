@@ -11,6 +11,8 @@ public class SceneExit : MonoBehaviour
     [SerializeField] private bool requireItem;
     [SerializeField] private bool consumeItem;
     [SerializeField] private bool isInteractable;
+    [SerializeField] private float transitionTime = 1f;
+    [SerializeField] private LoadNextLevel _loadNextLevel;
     
     private string exitName;
     private ItemRequirement _itemRequirement;
@@ -27,9 +29,8 @@ public class SceneExit : MonoBehaviour
     
         if (consumeItem)
             GetComponent<ItemRequirement>().ConsumeItem();
-    
-        PlayerPrefs.SetString("LastExitName", exitName);
-        SceneManager.LoadScene(destinationScene);
+
+        _loadNextLevel.ChangeLevel(transitionTime, exitName, destinationScene);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
