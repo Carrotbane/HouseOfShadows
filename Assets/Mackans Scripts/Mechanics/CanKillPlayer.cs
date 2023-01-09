@@ -30,6 +30,8 @@ public class CanKillPlayer : MonoBehaviour
         {
             var shadow = GameObject.Find("Shadow").transform;
             shadow.position = resetPosition.position;
+            onTriggerEnter.Invoke();
+            audioPlay.PlayAudio();
         }
     }
 }
