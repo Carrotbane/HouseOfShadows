@@ -10645,8 +10645,8 @@ MonoBehaviour:
   maxTime: 0
   minVolume: 1
   maxVolume: 1
-  minPitch: 1
-  maxPitch: 1
+  minPitch: 0.822
+  maxPitch: 0.822
 --- !u!82 &706270852
 AudioSource:
   m_ObjectHideFlags: 0
