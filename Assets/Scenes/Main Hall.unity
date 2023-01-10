@@ -7175,11 +7175,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: maxVolume
-      value: 0.604
+      value: 0.454
       objectReference: {fileID: 0}
     - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: minVolume
-      value: 0.587
+      value: 0.442
       objectReference: {fileID: 0}
     - target: {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: playOnStart
