@@ -4026,6 +4026,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8645041981929125096, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: m_Volume
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645041981929125096, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 860d5b3cc25b36841b64b9b6c0975109, type: 3}
+    - target: {fileID: 8645041981929125096, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 2839665716589987148, guid: f69cf3215fca0094ea615d15889c1df7, type: 2}
@@ -4101,7 +4109,8 @@ PrefabInstance:
       propertyPath: clipsToPlay.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 860d5b3cc25b36841b64b9b6c0975109, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 550140bef995a264c850245c5c90be49, type: 3}
 --- !u!1 &482968420
 GameObject:
