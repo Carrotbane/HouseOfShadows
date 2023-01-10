@@ -688,14 +688,14 @@ MonoBehaviour:
   oneShot: 1
   startDelay: 0
   playWithFade: 0
-  targetVolume: 0.829
+  targetVolume: 0.754
   fadeSpeed: 1
   clipsToPlay:
   - {fileID: 8300000, guid: 33bd94710b898654681a49ccd44888b5, type: 3}
   minTime: 0
   maxTime: 0
-  minVolume: 1
-  maxVolume: 1
+  minVolume: 0.672
+  maxVolume: 0.727
   minPitch: 1.43
   maxPitch: 1.79
 --- !u!114 &1038882505169962594

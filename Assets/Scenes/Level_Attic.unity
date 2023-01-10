@@ -394,18 +394,6 @@ PrefabInstance:
       propertyPath: maxMoveSpeed
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 8257199906305258812, guid: aae9d38c4adb48645aaa24acdcbc1c93, type: 3}
-      propertyPath: maxVolume
-      value: 0.727
-      objectReference: {fileID: 0}
-    - target: {fileID: 8257199906305258812, guid: aae9d38c4adb48645aaa24acdcbc1c93, type: 3}
-      propertyPath: minVolume
-      value: 0.672
-      objectReference: {fileID: 0}
-    - target: {fileID: 8257199906305258812, guid: aae9d38c4adb48645aaa24acdcbc1c93, type: 3}
-      propertyPath: targetVolume
-      value: 0.754
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aae9d38c4adb48645aaa24acdcbc1c93, type: 3}
 --- !u!1 &87984342
