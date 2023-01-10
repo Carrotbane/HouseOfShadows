@@ -25125,17 +25125,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1393842405 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 769840962651149718, guid: 41d4eb9fb2a5efe40b64d06c982344e4, type: 3}
-  m_PrefabInstance: {fileID: 1831677357}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1393842406 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2120667546964977139, guid: 41d4eb9fb2a5efe40b64d06c982344e4, type: 3}
   m_PrefabInstance: {fileID: 1831677357}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393842405}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d555e675029e9c4688a1d3d0c5fbc8b, type: 3}
@@ -25146,32 +25141,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7316249080175351493, guid: 41d4eb9fb2a5efe40b64d06c982344e4, type: 3}
   m_PrefabInstance: {fileID: 1831677357}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1393842409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393842405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b9f9119c9d944c4a80e8283bacbb241, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playOnStart: 1
-  oneShot: 0
-  startDelay: 0
-  playWithFade: 1
-  targetVolume: 1
-  fadeSpeed: 0.205
-  clipsToPlay:
-  - {fileID: 8300000, guid: 27b11d68cdf38b94fad2b43b0183c6d6, type: 3}
-  minTime: 0
-  maxTime: 0
-  minVolume: 1
-  maxVolume: 1
-  minPitch: 1
-  maxPitch: 1
 --- !u!1 &1397709147
 GameObject:
   m_ObjectHideFlags: 0
@@ -33154,7 +33123,7 @@ PrefabInstance:
     - target: {fileID: 778826628612056859, guid: 41d4eb9fb2a5efe40b64d06c982344e4, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 27b11d68cdf38b94fad2b43b0183c6d6, type: 3}
     - target: {fileID: 778826628612056859, guid: 41d4eb9fb2a5efe40b64d06c982344e4, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 

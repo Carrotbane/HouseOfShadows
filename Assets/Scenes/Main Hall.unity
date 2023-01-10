@@ -19079,9 +19079,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8645041981929125096, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: m_Pitch
+      value: 1.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645041981929125096, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: m_Volume
       value: 0.57
       objectReference: {fileID: 0}
+    - target: {fileID: 8645041981929125096, guid: 550140bef995a264c850245c5c90be49, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c19b803754c668a499ca653f21bba03b, type: 3}
     - target: {fileID: 8645041981929125096, guid: 550140bef995a264c850245c5c90be49, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
@@ -19170,7 +19178,8 @@ PrefabInstance:
       propertyPath: clipsToPlay.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: c19b803754c668a499ca653f21bba03b, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8645041981929125103, guid: 550140bef995a264c850245c5c90be49, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 550140bef995a264c850245c5c90be49, type: 3}
 --- !u!1001 &1901405846
 PrefabInstance:
