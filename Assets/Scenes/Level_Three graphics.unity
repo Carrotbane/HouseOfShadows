@@ -10744,7 +10744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HoldDown: 0
   HumanCanInteract: 1
-  ShadowCanInteract: 1
+  ShadowCanInteract: 0
 --- !u!114 &706270851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23373,6 +23373,10 @@ PrefabInstance:
       propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlayAudioRun
       objectReference: {fileID: 0}
+    - target: {fileID: 6184870482470659000, guid: 4e2566213f97b10439bc04985e01044c, type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7270523215809956766, guid: 4e2566213f97b10439bc04985e01044c, type: 3}
       propertyPath: m_SortingLayer
       value: 1
@@ -24403,6 +24407,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 286185191893039878, guid: 8ae95d9caebc03f4d887edf1f45aa34d, type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 288902338562209880, guid: 8ae95d9caebc03f4d887edf1f45aa34d, type: 3}
       propertyPath: m_SortingLayer
       value: 1
@@ -24604,10 +24612,10 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0, y: 4.5}
-      - {x: -3, y: -4}
-      - {x: 0.331873, y: -5.4231663}
-      - {x: 3.4372077, y: -4.3404446}
-      - {x: 3.8780873, y: -2.501472}
+      - {x: -3.3, y: -5.54}
+      - {x: 0.19, y: -6}
+      - {x: 5.01, y: -5.08}
+      - {x: 3.88, y: -2.501472}
 --- !u!4 &1329390729 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 257926920154834972, guid: fa02b0659d34a0947a786d400ac357d8, type: 3}
