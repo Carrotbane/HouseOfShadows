@@ -24,6 +24,9 @@ public class GroundTrigger : MonoBehaviour
                 return;
         }
 
+        if (other.isTrigger)
+            return;
+
         if (_rigidbody2D.velocity.y <= 0)
             _humanCore.isGrounded = true;
     }
